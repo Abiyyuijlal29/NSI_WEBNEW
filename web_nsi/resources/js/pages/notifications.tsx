@@ -98,6 +98,7 @@ export default function Notifications() {
                 <div className="flex flex-col gap-4">
                     {notifications.map((n, i) => {
                         const Icon = n.icon;
+
                         return (
                             <div
                                 key={i}

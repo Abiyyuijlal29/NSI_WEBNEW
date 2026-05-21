@@ -23,6 +23,7 @@ function StatusBadge({ status }: { status: string }) {
         Pending: 'bg-yellow-50 text-yellow-700 border-yellow-200',
         Banned: 'bg-red-50 text-red-700 border-red-200',
     };
+
     return (
         <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full border ${colors[status] || 'bg-gray-50 text-gray-600 border-gray-200'}`}>
             {status}
@@ -46,8 +47,10 @@ function AvatarCircle({ initials, name, avatarUrl }: { initials: string; name: s
             </div>
         );
     }
+
     const bgColors = ['bg-blue-100 text-blue-700', 'bg-purple-100 text-purple-700', 'bg-rose-100 text-rose-700', 'bg-emerald-100 text-emerald-700'];
     const colorIndex = initials.charCodeAt(0) % bgColors.length;
+
     return (
         <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0 ${bgColors[colorIndex]}`}>
             {initials}
