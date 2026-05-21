@@ -1,6 +1,18 @@
+<<<<<<< Updated upstream
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import type { BreadcrumbItem as BreadcrumbItemType } from '@/types';
+=======
+import { usePage } from '@inertiajs/react';
+import { Search, Bell, HelpCircle } from 'lucide-react';
+import { SidebarTrigger } from '@/components/ui/sidebar';
+import { useSettings } from '@/contexts/settings-context';
+
+export function AppSidebarHeader() {
+    const { auth } = usePage().props;
+    const user = auth?.user;
+    const { t } = useSettings();
+>>>>>>> Stashed changes
 
 export function AppSidebarHeader({
     breadcrumbs = [],

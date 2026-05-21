@@ -1,4 +1,8 @@
 import { Head, Link, usePage } from '@inertiajs/react';
+<<<<<<< Updated upstream
+=======
+import { Network, Shield, BarChart3, Globe, ArrowRight } from 'lucide-react';
+>>>>>>> Stashed changes
 import { dashboard, login, register } from '@/routes';
 
 export default function Welcome({

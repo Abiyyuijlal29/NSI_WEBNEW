@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 import { useSyncExternalStore } from 'react';
+=======
+import { useSyncExternalStore, useEffect } from 'react';
+import { translations } from '@/lib/translations';
+>>>>>>> Stashed changes
 
 export type ResolvedAppearance = 'light' | 'dark';
 export type Appearance = ResolvedAppearance | 'system';
@@ -113,3 +118,48 @@ export function useAppearance(): UseAppearanceReturn {
 
     return { appearance, resolvedAppearance, updateAppearance } as const;
 }
+<<<<<<< Updated upstream
+=======
+
+// === LANGUAGE MANAGEMENT ===
+const LANG_KEY = 'language';
+const langListeners = new Set<() => void>();
+let _currentLang: Language = 'en';
+
+const subscribeLanguage = (cb: () => void) => {
+    langListeners.add(cb);
+
+    return () => langListeners.delete(cb);
+};
+
+const notifyLang = () => langListeners.forEach((l) => l());
+
+export function useLanguage() {
+    const language: Language = useSyncExternalStore(
+        subscribeLanguage,
+        () => _currentLang,
+        () => 'en' as Language,
+    );
+
+    useEffect(() => {
+        // Sync from localStorage on mount
+        const stored = localStorage.getItem(LANG_KEY) as Language;
+
+        if (stored && stored !== _currentLang) {
+            _currentLang = stored;
+            notifyLang();
+        }
+    }, []);
+
+    const setLanguage = (lang: Language): void => {
+        _currentLang = lang;
+        localStorage.setItem(LANG_KEY, lang);
+        notifyLang();
+    };
+
+    const t = (key: keyof typeof translations['en']): string =>
+        translations[language]?.[key] || translations['en'][key] || key;
+
+    return { language, setLanguage, t } as const;
+}
+>>>>>>> Stashed changes

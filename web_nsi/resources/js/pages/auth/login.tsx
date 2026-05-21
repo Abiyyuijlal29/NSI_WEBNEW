@@ -1,4 +1,5 @@
 import { Form, Head } from '@inertiajs/react';
+import { Network, Mail, Lock } from 'lucide-react';
 import InputError from '@/components/input-error';
 import PasswordInput from '@/components/password-input';
 import TextLink from '@/components/text-link';

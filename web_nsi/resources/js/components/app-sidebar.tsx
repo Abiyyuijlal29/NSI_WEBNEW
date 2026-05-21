@@ -13,6 +13,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
+<<<<<<< Updated upstream
 import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
 
@@ -36,6 +37,10 @@ const footerNavItems: NavItem[] = [
         icon: BookOpen,
     },
 ];
+=======
+import { useSettings } from '@/contexts/settings-context';
+import { dashboard } from '@/routes';
+>>>>>>> Stashed changes
 
 export function AppSidebar() {
     return (
