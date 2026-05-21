@@ -1,6 +1,5 @@
 import { useSyncExternalStore } from 'react';
-import type { Language } from '@/lib/translations';
-import { translations } from '@/lib/translations';
+import { translations, Language } from '@/lib/translations';
 
 const listeners = new Set<() => void>();
 let currentLanguage: Language = 'en';
@@ -9,13 +8,11 @@ const getStoredLanguage = (): Language => {
     if (typeof window === 'undefined') {
         return 'en';
     }
-
     return (localStorage.getItem('language') as Language) || 'en';
 };
 
 const subscribe = (callback: () => void) => {
     listeners.add(callback);
-
     return () => listeners.delete(callback);
 };
 
@@ -25,7 +22,6 @@ export function initializeLanguage(): void {
     if (typeof window === 'undefined') {
         return;
     }
-
     currentLanguage = getStoredLanguage();
 }
 

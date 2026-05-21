@@ -9,10 +9,7 @@ export type Appearance = ResolvedAppearance | 'system';
 // Theme helpers (no React state needed - just DOM manipulation)
 // ============================================================
 const setCookie = (name: string, value: string, days = 365): void => {
-    if (typeof document === 'undefined') {
-return;
-}
-
+    if (typeof document === 'undefined') return;
     const maxAge = days * 24 * 60 * 60;
     document.cookie = `${name}=${value};path=/;max-age=${maxAge};SameSite=Lax`;
 };
@@ -24,10 +21,7 @@ const isDarkMode = (mode: Appearance) =>
     mode === 'dark' || (mode === 'system' && prefersDark());
 
 const applyTheme = (mode: Appearance): void => {
-    if (typeof document === 'undefined') {
-return;
-}
-
+    if (typeof document === 'undefined') return;
     const dark = isDarkMode(mode);
     document.documentElement.classList.toggle('dark', dark);
     document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
@@ -52,18 +46,12 @@ const SettingsContext = createContext<SettingsContextType | null>(null);
 // ============================================================
 export function SettingsProvider({ children }: { children: React.ReactNode }) {
     const [language, setLanguageState] = useState<Language>(() => {
-        if (typeof window === 'undefined') {
-return 'en';
-}
-
+        if (typeof window === 'undefined') return 'en';
         return (localStorage.getItem('language') as Language) || 'en';
     });
 
     const [appearance, setAppearanceState] = useState<Appearance>(() => {
-        if (typeof window === 'undefined') {
-return 'system';
-}
-
+        if (typeof window === 'undefined') return 'system';
         return (localStorage.getItem('appearance') as Appearance) || 'system';
     });
 
@@ -97,10 +85,6 @@ return 'system';
 // ============================================================
 export function useSettings() {
     const ctx = useContext(SettingsContext);
-
-    if (!ctx) {
-throw new Error('useSettings must be used inside <SettingsProvider>');
-}
-
+    if (!ctx) throw new Error('useSettings must be used inside <SettingsProvider>');
     return ctx;
 }

@@ -1,7 +1,7 @@
 import { Head } from '@inertiajs/react';
-import { Edit2, ChevronDown, Shield, ChevronRight, Plus, Moon, Sun, Monitor } from 'lucide-react';
+import { Edit2, ChevronDown, Shield, ChevronRight, Plus, User, Moon, Sun, Monitor } from 'lucide-react';
 import { useSettings } from '@/contexts/settings-context';
-import type { Language } from '@/lib/translations';
+import { Language } from '@/lib/translations';
 
 export default function AdminSettings() {
     const { language, setLanguage, appearance, setAppearance, t } = useSettings();
@@ -92,7 +92,6 @@ export default function AdminSettings() {
                                             { id: 'system', icon: Monitor, label: t('system_mode') }
                                         ].map((item) => {
                                             const Icon = item.icon;
-
                                             return (
                                                 <button
                                                     key={item.id}

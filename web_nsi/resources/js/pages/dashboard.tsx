@@ -1,27 +1,69 @@
 import { Head } from '@inertiajs/react';
-import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
-import { dashboard } from '@/routes';
+import { Users, Server, Ticket, DollarSign, MoreHorizontal, UserPlus, CheckCircle, AlertTriangle, RefreshCw, Mail } from 'lucide-react';
+import { useSettings } from '@/contexts/settings-context';
 
-export default function Dashboard() {
+interface DashboardProps {
+    stats: {
+        totalCustomers: number;
+        totalPackages: number;
+        pendingPayments: number;
+    };
+}
+
+export default function Dashboard({ stats }: DashboardProps) {
+    const { t } = useSettings();
+
     return (
-        <>
-            <Head title="Dashboard" />
-            <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
-                <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
+        <div className="flex h-full flex-1 flex-col bg-[#f8fafc] dark:bg-[#0a0a0a] text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300 overflow-x-hidden">
+            <Head title={t('dashboard')} />
+            
+            <div className="p-6 md:p-8 max-w-[1600px] w-full mx-auto flex flex-col gap-8">
+                
+                {/* Header Section */}
+                <div>
+                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">Dashboard Overview</h2>
+                    <p className="text-sm text-gray-500 dark:text-slate-400">Welcome back. Here is your daily system summary.</p>
+                </div>
+
+                {/* Stats Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {/* Card 1 */}
+                    <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-gray-100 dark:border-slate-800 shadow-[0_2px_10px_rgba(0,0,0,0.02)] flex flex-col transition-colors">
+                        <div className="flex justify-between items-start mb-6">
+                            <Users className="w-5 h-5 text-gray-700 dark:text-slate-400" />
+                        </div>
+                        <h3 className="text-xs font-bold text-gray-500 dark:text-slate-500 tracking-wider mb-1 uppercase">{t('customer_management')}</h3>
+                        <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.totalCustomers.toLocaleString()}</p>
                     </div>
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
+
+                    {/* Card 2 */}
+                    <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-gray-100 dark:border-slate-800 shadow-[0_2px_10px_rgba(0,0,0,0.02)] flex flex-col transition-colors">
+                        <div className="flex justify-between items-start mb-6">
+                            <Server className="w-5 h-5 text-gray-700 dark:text-slate-400" />
+                        </div>
+                        <h3 className="text-xs font-bold text-gray-500 dark:text-slate-500 tracking-wider mb-1 uppercase">ACTIVE PACKAGES</h3>
+                        <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.totalPackages}</p>
                     </div>
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
+
+                    {/* Card 3 */}
+                    <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-gray-100 dark:border-slate-800 shadow-[0_2px_10px_rgba(0,0,0,0.02)] flex flex-col relative overflow-hidden transition-colors">
+                        <div className="flex justify-between items-start mb-6">
+                            <Ticket className="w-5 h-5 text-gray-700 dark:text-slate-400" />
+                            <span className="text-[10px] font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-slate-800 px-2 py-0.5 rounded uppercase tracking-wider border dark:border-slate-700">Action Needed</span>
+                        </div>
+                        <h3 className="text-xs font-bold text-gray-500 dark:text-slate-500 tracking-wider mb-1 uppercase">BILLING RECORDS</h3>
+                        <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.pendingPayments}</p>
+                    </div>
+
+                    {/* Card 4 */}
+                    <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-gray-100 dark:border-slate-800 shadow-[0_2px_10px_rgba(0,0,0,0.02)] flex flex-col transition-colors">
+                        <div className="flex justify-between items-start mb-6">
+                            <DollarSign className="w-5 h-5 text-gray-700 dark:text-slate-400" />
+                        </div>
+                        <h3 className="text-xs font-bold text-gray-500 dark:text-slate-500 tracking-wider mb-1 uppercase">EST. REVENUE</h3>
+                        <p className="text-2xl font-bold text-gray-900 dark:text-white">Rp 2.5M</p>
                     </div>
                 </div>
-<<<<<<< Updated upstream
-                <div className="relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border">
-                    <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-=======
 
                 {/* Main Content Split */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -82,7 +124,6 @@ export default function Dashboard() {
                                     { icon: Mail, text: 'Campaign "Spring Promo" launched', time: 'Yesterday' },
                                 ].map((item, i) => {
                                     const Icon = item.icon;
-
                                     return (
                                         <div key={i} className="p-4 px-6 border-b border-gray-50 dark:border-slate-800 flex gap-4 items-start group hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
                                             <div className="mt-1">
@@ -105,18 +146,12 @@ export default function Dashboard() {
                         </div>
                     </div>
 
->>>>>>> Stashed changes
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
 Dashboard.layout = {
-    breadcrumbs: [
-        {
-            title: 'Dashboard',
-            href: dashboard(),
-        },
-    ],
+    breadcrumbs: [],
 };

@@ -1,10 +1,7 @@
-<<<<<<< Updated upstream
-import { useSyncExternalStore } from 'react';
-=======
-import { useSyncExternalStore, useEffect } from 'react';
+import { useSyncExternalStore, useState, useEffect } from 'react';
 import { translations } from '@/lib/translations';
->>>>>>> Stashed changes
 
+export type Language = 'en' | 'id';
 export type ResolvedAppearance = 'light' | 'dark';
 export type Appearance = ResolvedAppearance | 'system';
 
@@ -118,8 +115,6 @@ export function useAppearance(): UseAppearanceReturn {
 
     return { appearance, resolvedAppearance, updateAppearance } as const;
 }
-<<<<<<< Updated upstream
-=======
 
 // === LANGUAGE MANAGEMENT ===
 const LANG_KEY = 'language';
@@ -128,7 +123,6 @@ let _currentLang: Language = 'en';
 
 const subscribeLanguage = (cb: () => void) => {
     langListeners.add(cb);
-
     return () => langListeners.delete(cb);
 };
 
@@ -144,7 +138,6 @@ export function useLanguage() {
     useEffect(() => {
         // Sync from localStorage on mount
         const stored = localStorage.getItem(LANG_KEY) as Language;
-
         if (stored && stored !== _currentLang) {
             _currentLang = stored;
             notifyLang();
@@ -162,4 +155,3 @@ export function useLanguage() {
 
     return { language, setLanguage, t } as const;
 }
->>>>>>> Stashed changes
