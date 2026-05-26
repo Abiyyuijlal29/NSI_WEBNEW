@@ -1,5 +1,5 @@
-import { Link } from '@inertiajs/react';
-import { LayoutGrid, Users, Activity, Bell, FileText, Settings } from 'lucide-react';
+import { Link, usePage } from '@inertiajs/react';
+import { LayoutGrid, Users, Activity, Headset, FileText, Settings, UserCog } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
@@ -17,6 +17,8 @@ import { useSettings } from '@/contexts/settings-context';
 
 export function AppSidebar() {
     const { t } = useSettings();
+    const { auth } = usePage<{ auth: { user: { role: string } } }>().props;
+    const isSuperAdmin = auth?.user?.role === 'superadmin';
 
     const mainNavItems = [
         {
@@ -35,20 +37,24 @@ export function AppSidebar() {
             icon: Activity,
         },
         {
-            title: t('notifications'),
+            title: 'Customer Service',
             href: '/notifications',
-            icon: Bell,
+            icon: Headset,
         },
         {
             title: t('content_manager'),
             href: '/content-manager',
             icon: FileText,
         },
-        {
+        ...(isSuperAdmin ? [{
             title: t('admin_settings'),
             href: '/admin-settings',
             icon: Settings,
-        },
+        }, {
+            title: t('admin_management'),
+            href: '/admin-management',
+            icon: UserCog,
+        }] : []),
     ];
 
     return (

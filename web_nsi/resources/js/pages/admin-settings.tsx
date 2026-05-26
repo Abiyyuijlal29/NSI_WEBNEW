@@ -1,10 +1,14 @@
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import { Edit2, ChevronDown, Shield, ChevronRight, Plus, User, Moon, Sun, Monitor } from 'lucide-react';
 import { useSettings } from '@/contexts/settings-context';
 import { Language } from '@/lib/translations';
 
 export default function AdminSettings() {
     const { language, setLanguage, appearance, setAppearance, t } = useSettings();
+    const { auth } = usePage<{ auth: { user: { name: string; email: string; role: string } } }>().props;
+    const user = auth?.user;
+
+    const roleLabel = user?.role === 'superadmin' ? 'Super Administrator' : 'Administrator';
 
     return (
         <div className="flex h-full flex-1 flex-col bg-[#f8fafc] dark:bg-[#0a0a0a] text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
@@ -35,15 +39,15 @@ export default function AdminSettings() {
                                 <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 w-full">
                                     <div>
                                         <label className="block text-sm text-gray-700 dark:text-slate-300 mb-1.5">{t('full_name')}</label>
-                                        <input type="text" defaultValue="Admin Rani" className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-slate-900 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors" />
+                                        <input type="text" defaultValue={user?.name ?? ''} className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-slate-900 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors" />
                                     </div>
                                     <div>
                                         <label className="block text-sm text-gray-700 dark:text-slate-300 mb-1.5">{t('role')}</label>
-                                        <input type="text" defaultValue="Super Administrator" readOnly className="w-full px-4 py-2 bg-gray-50 dark:bg-slate-800/50 border border-gray-300 dark:border-slate-700 rounded-md text-sm text-gray-500 dark:text-slate-400 focus:outline-none cursor-not-allowed" />
+                                        <input type="text" defaultValue={roleLabel} readOnly className="w-full px-4 py-2 bg-gray-50 dark:bg-slate-800/50 border border-gray-300 dark:border-slate-700 rounded-md text-sm text-gray-500 dark:text-slate-400 focus:outline-none cursor-not-allowed" />
                                     </div>
                                     <div className="md:col-span-2">
                                         <label className="block text-sm text-gray-700 dark:text-slate-300 mb-1.5">{t('email_address')}</label>
-                                        <input type="email" defaultValue="rani.admin@nsi-networks.com" className="w-full md:w-[60%] px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-slate-900 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors" />
+                                        <input type="email" defaultValue={user?.email ?? ''} className="w-full md:w-[60%] px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-slate-900 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors" />
                                     </div>
                                     <div className="md:col-span-2 flex justify-end gap-4 mt-2">
                                         <button type="button" className="text-sm text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white font-medium">{t('cancel')}</button>
