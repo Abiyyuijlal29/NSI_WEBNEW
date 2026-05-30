@@ -128,6 +128,16 @@ const subscribeLanguage = (cb: () => void) => {
 
 const notifyLang = () => langListeners.forEach((l) => l());
 
+export function initializeLanguage(): void {
+    if (typeof window === 'undefined') {
+        return;
+    }
+    const stored = localStorage.getItem(LANG_KEY) as Language;
+    if (stored && (stored === 'en' || stored === 'id')) {
+        _currentLang = stored;
+    }
+}
+
 export function useLanguage() {
     const language: Language = useSyncExternalStore(
         subscribeLanguage,

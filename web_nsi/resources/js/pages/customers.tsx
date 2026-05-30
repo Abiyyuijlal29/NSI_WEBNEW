@@ -1,5 +1,12 @@
-import { Head } from '@inertiajs/react';
-import { Search, Plus, MoreHorizontal } from 'lucide-react';
+import { Head, useForm } from '@inertiajs/react';
+import { Search, Plus, MoreHorizontal, Pencil, Trash2 } from 'lucide-react';
+import { useState } from 'react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 interface Customer {
     id: string;
@@ -56,6 +63,70 @@ function AvatarCircle({ initials, name, avatarUrl }: { initials: string; name: s
 }
 
 export default function Customers({ customers }: CustomersProps) {
+    const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null);
+
+    const { data, setData, post, put, delete: destroy, processing, errors, reset } = useForm({
+        nama_lengkap: '',
+        email: '',
+        no_hp: '',
+    });
+
+    const openAddModal = () => {
+        reset();
+        setIsAddModalOpen(true);
+    };
+
+    const openEditModal = (customer: Customer) => {
+        setSelectedCustomer(customer);
+        setData({
+            nama_lengkap: customer.name,
+            email: customer.email,
+            no_hp: customer.phone || '',
+        });
+        setIsEditModalOpen(true);
+    };
+
+    const openDeleteModal = (customer: Customer) => {
+        setSelectedCustomer(customer);
+        setIsDeleteModalOpen(true);
+    };
+
+    const handleAddSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        post('/customers', {
+            onSuccess: () => {
+                setIsAddModalOpen(false);
+                reset();
+                toast.success('Customer added successfully');
+            },
+        });
+    };
+
+    const handleEditSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!selectedCustomer) return;
+        put(`/customers/${selectedCustomer.id}`, {
+            onSuccess: () => {
+                setIsEditModalOpen(false);
+                reset();
+                toast.success('Customer updated successfully');
+            },
+        });
+    };
+
+    const handleDelete = () => {
+        if (!selectedCustomer) return;
+        destroy(`/customers/${selectedCustomer.id}`, {
+            onSuccess: () => {
+                setIsDeleteModalOpen(false);
+                toast.success('Customer deleted successfully');
+            },
+        });
+    };
+
     return (
         <div className="flex h-full flex-1 flex-col bg-[#f8fafc] dark:bg-[#0a0a0a] font-sans transition-colors duration-300 overflow-x-hidden">
             <Head title="Customer Management" />
@@ -80,7 +151,10 @@ export default function Customers({ customers }: CustomersProps) {
                             />
                         </div>
                         {/* Add New User */}
-                        <button className="flex items-center gap-2 px-5 py-2.5 bg-[#122b7a] text-white text-sm font-semibold rounded-lg hover:bg-[#1a3d9e] transition-all shadow-sm active:scale-95">
+                        <button
+                            onClick={openAddModal}
+                            className="flex items-center gap-2 px-5 py-2.5 bg-[#122b7a] text-white text-sm font-semibold rounded-lg hover:bg-[#1a3d9e] transition-all shadow-sm active:scale-95"
+                        >
                             <Plus className="w-4 h-4" />
                             Add New User
                         </button>
@@ -129,31 +203,151 @@ export default function Customers({ customers }: CustomersProps) {
                                             <span className="text-sm text-gray-500 dark:text-slate-400 whitespace-pre-line leading-relaxed">{c.lastLogin}</span>
                                         </td>
                                         <td className="px-4 py-5">
-                                            <button className="p-1 hover:bg-gray-100 dark:hover:bg-slate-800 rounded transition-colors">
-                                                <MoreHorizontal className="w-5 h-5 text-gray-400 dark:text-slate-500" />
-                                            </button>
+                                            <DropdownMenu>
+                                                <DropdownMenuTrigger asChild>
+                                                    <button className="p-1 hover:bg-gray-100 dark:hover:bg-slate-800 rounded transition-colors">
+                                                        <MoreHorizontal className="w-5 h-5 text-gray-400 dark:text-slate-500" />
+                                                    </button>
+                                                </DropdownMenuTrigger>
+                                                <DropdownMenuContent align="end" className="w-40">
+                                                    <DropdownMenuItem onClick={() => openEditModal(c)}>
+                                                        <Pencil className="w-4 h-4 mr-2" />
+                                                        Edit
+                                                    </DropdownMenuItem>
+                                                    <DropdownMenuItem onClick={() => openDeleteModal(c)} className="text-red-600 focus:text-red-600">
+                                                        <Trash2 className="w-4 h-4 mr-2" />
+                                                        Delete
+                                                    </DropdownMenuItem>
+                                                </DropdownMenuContent>
+                                            </DropdownMenu>
                                         </td>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>
                     </div>
-
-                    {/* Pagination */}
-                    <div className="flex items-center justify-between px-6 py-4 border-t border-gray-100">
-                        <p className="text-sm text-gray-500">Showing 1 to 4 of 248 entries</p>
-                        <div className="flex items-center gap-1">
-                            <button className="w-8 h-8 flex items-center justify-center text-sm text-gray-400 rounded hover:bg-gray-100 transition-colors">&lt;</button>
-                            <button className="w-8 h-8 flex items-center justify-center text-sm font-bold text-white bg-[#122b7a] rounded">1</button>
-                            <button className="w-8 h-8 flex items-center justify-center text-sm text-gray-600 rounded hover:bg-gray-100 transition-colors">2</button>
-                            <button className="w-8 h-8 flex items-center justify-center text-sm text-gray-600 rounded hover:bg-gray-100 transition-colors">3</button>
-                            <span className="w-8 h-8 flex items-center justify-center text-sm text-gray-400">...</span>
-                            <button className="w-8 h-8 flex items-center justify-center text-sm text-gray-600 rounded hover:bg-gray-100 transition-colors">62</button>
-                            <button className="w-8 h-8 flex items-center justify-center text-sm text-gray-400 rounded hover:bg-gray-100 transition-colors">&gt;</button>
-                        </div>
-                    </div>
                 </div>
             </div>
+
+            {/* Add Modal */}
+            <Dialog open={isAddModalOpen} onOpenChange={setIsAddModalOpen}>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>Add New Customer</DialogTitle>
+                    </DialogHeader>
+                    <form onSubmit={handleAddSubmit} className="space-y-4 py-4">
+                        <div className="space-y-2">
+                            <Label htmlFor="add-name">Full Name</Label>
+                            <Input
+                                id="add-name"
+                                value={data.nama_lengkap}
+                                onChange={(e) => setData('nama_lengkap', e.target.value)}
+                                required
+                            />
+                            {errors.nama_lengkap && <p className="text-sm text-red-500">{errors.nama_lengkap}</p>}
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="add-email">Email Address</Label>
+                            <Input
+                                id="add-email"
+                                type="email"
+                                value={data.email}
+                                onChange={(e) => setData('email', e.target.value)}
+                                required
+                            />
+                            {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="add-phone">Phone Number</Label>
+                            <Input
+                                id="add-phone"
+                                value={data.no_hp}
+                                onChange={(e) => setData('no_hp', e.target.value)}
+                            />
+                            {errors.no_hp && <p className="text-sm text-red-500">{errors.no_hp}</p>}
+                        </div>
+                        <DialogFooter>
+                            <Button type="button" variant="outline" onClick={() => setIsAddModalOpen(false)}>
+                                Cancel
+                            </Button>
+                            <Button type="submit" disabled={processing} className="bg-[#122b7a] hover:bg-[#1a3d9e] text-white">
+                                Save
+                            </Button>
+                        </DialogFooter>
+                    </form>
+                </DialogContent>
+            </Dialog>
+
+            {/* Edit Modal */}
+            <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>Edit Customer</DialogTitle>
+                    </DialogHeader>
+                    <form onSubmit={handleEditSubmit} className="space-y-4 py-4">
+                        <div className="space-y-2">
+                            <Label htmlFor="edit-name">Full Name</Label>
+                            <Input
+                                id="edit-name"
+                                value={data.nama_lengkap}
+                                onChange={(e) => setData('nama_lengkap', e.target.value)}
+                                required
+                            />
+                            {errors.nama_lengkap && <p className="text-sm text-red-500">{errors.nama_lengkap}</p>}
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="edit-email">Email Address</Label>
+                            <Input
+                                id="edit-email"
+                                type="email"
+                                value={data.email}
+                                onChange={(e) => setData('email', e.target.value)}
+                                required
+                            />
+                            {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="edit-phone">Phone Number</Label>
+                            <Input
+                                id="edit-phone"
+                                value={data.no_hp}
+                                onChange={(e) => setData('no_hp', e.target.value)}
+                            />
+                            {errors.no_hp && <p className="text-sm text-red-500">{errors.no_hp}</p>}
+                        </div>
+                        <DialogFooter>
+                            <Button type="button" variant="outline" onClick={() => setIsEditModalOpen(false)}>
+                                Cancel
+                            </Button>
+                            <Button type="submit" disabled={processing} className="bg-[#122b7a] hover:bg-[#1a3d9e] text-white">
+                                Save Changes
+                            </Button>
+                        </DialogFooter>
+                    </form>
+                </DialogContent>
+            </Dialog>
+
+            {/* Delete Modal */}
+            <Dialog open={isDeleteModalOpen} onOpenChange={setIsDeleteModalOpen}>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>Delete Customer</DialogTitle>
+                    </DialogHeader>
+                    <div className="py-4">
+                        <p className="text-gray-600 dark:text-gray-300">
+                            Are you sure you want to delete <strong>{selectedCustomer?.name}</strong>? This action cannot be undone.
+                        </p>
+                    </div>
+                    <DialogFooter>
+                        <Button type="button" variant="outline" onClick={() => setIsDeleteModalOpen(false)}>
+                            Cancel
+                        </Button>
+                        <Button type="button" variant="destructive" disabled={processing} onClick={handleDelete}>
+                            Delete
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 }

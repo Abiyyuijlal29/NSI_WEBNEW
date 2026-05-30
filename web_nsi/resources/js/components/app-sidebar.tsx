@@ -32,11 +32,6 @@ export function AppSidebar() {
             icon: Users,
         },
         {
-            title: t('service_monitoring'),
-            href: '/service-monitoring',
-            icon: Activity,
-        },
-        {
             title: 'Customer Service',
             href: '/notifications',
             icon: Headset,
