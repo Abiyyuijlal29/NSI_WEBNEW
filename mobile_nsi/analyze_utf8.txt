@@ -1,0 +1,45 @@
+﻿Analyzing mobile_nsi...                                         
+
+warning - Unused import: 'package:intl/intl.dart' - lib\pages\billing_page.dart:5:8 - unused_import
+warning - The declaration '_getDueDate' isn't referenced - lib\pages\billing_page.dart:549:10 - unused_element
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\billing_page.dart:878:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\billing_page.dart:885:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\billing_page.dart:950:46 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\billing_page.dart:959:45 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\billing_page.dart:1027:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\billing_page.dart:1071:53 - deprecated_member_use
+warning - Unused import: '../widgets/loading_logo.dart' - lib\pages\cs_page.dart:5:8 - unused_import
+   info - Don't invoke 'print' in production code - lib\pages\cs_page.dart:66:7 - avoid_print
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\cs_page.dart:223:45 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\cs_page.dart:267:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\cs_page.dart:324:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\cs_page.dart:386:49 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre - lib\pages\cs_page.dart:416:35 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\cs_page.dart:558:49 - deprecated_member_use
+warning - Unused import: 'package:intl/intl.dart' - lib\pages\home_page.dart:3:8 - unused_import
+warning - The '!' will have no effect because the receiver can't be null - lib\pages\home_page.dart:65:54 - unnecessary_non_null_assertion
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\home_page.dart:221:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\home_page.dart:404:39 - deprecated_member_use
+warning - The declaration '_getDueDate' isn't referenced - lib\pages\home_page.dart:559:10 - unused_element
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login_page.dart:147:43 - deprecated_member_use
+warning - The value of the field '_currentPrice' isn't used - lib\pages\package_page.dart:19:7 - unused_field
+warning - The value of the field '_totalPaid' isn't used - lib\pages\package_page.dart:22:7 - unused_field
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\package_page.dart:262:52 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\pages\package_page.dart:674:55 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\package_page.dart:677:61 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\pages\package_page.dart:683:60 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\package_page.dart:808:59 - deprecated_member_use
+warning - Unused import: '../main.dart' - lib\pages\profile_page.dart:6:8 - unused_import
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\pages\profile_page.dart:245:44 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\profile_page.dart:567:55 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\profile_page.dart:697:33 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\profile_page.dart:762:40 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\profile_page.dart:766:30 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\profile_page.dart:806:39 - deprecated_member_use
+   info - The private field _obscurePass could be 'final' - lib\pages\register_page.dart:89:8 - prefer_final_fields
+warning - The value of the field '_obscurePass' isn't used - lib\pages\register_page.dart:89:8 - unused_field
+   info - The private field _obscureConfirm could be 'final' - lib\pages\register_page.dart:90:8 - prefer_final_fields
+warning - The value of the field '_obscureConfirm' isn't used - lib\pages\register_page.dart:90:8 - unused_field
+   info - 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre - lib\pages\register_page.dart:339:21 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\loading_logo.dart:15:46 - deprecated_member_use
+
