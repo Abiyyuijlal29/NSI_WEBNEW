@@ -362,22 +362,31 @@ export default function AdminManagement({ admins, search, total }: Props) {
             {modal === 'edit' && selected && (
                 <Modal title="Edit Admin" onClose={closeModal}>
                     <form onSubmit={handleEdit} className="flex flex-col gap-4">
+                        {selected.role === 'superadmin' && (
+                            <div className="p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg text-xs text-blue-700 dark:text-blue-300 flex gap-2">
+                                <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                                Superadmin's name, email, and role cannot be changed here. Please update your profile in the Account Settings.
+                            </div>
+                        )}
                         <div>
                             <label className="block text-xs font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Full Name</label>
                             <input type="text" value={editForm.name} onChange={e => setEditForm(f => ({ ...f, name: e.target.value }))}
-                                className="w-full px-3 py-2.5 border border-gray-300 dark:border-slate-700 dark:bg-slate-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#122b7a] dark:text-white transition-all" />
+                                disabled={selected.role === 'superadmin'}
+                                className="w-full px-3 py-2.5 border border-gray-300 dark:border-slate-700 dark:bg-slate-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#122b7a] dark:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed" />
                             {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
                         </div>
                         <div>
                             <label className="block text-xs font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Email Address</label>
                             <input type="email" value={editForm.email} onChange={e => setEditForm(f => ({ ...f, email: e.target.value }))}
-                                className="w-full px-3 py-2.5 border border-gray-300 dark:border-slate-700 dark:bg-slate-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#122b7a] dark:text-white transition-all" />
+                                disabled={selected.role === 'superadmin'}
+                                className="w-full px-3 py-2.5 border border-gray-300 dark:border-slate-700 dark:bg-slate-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#122b7a] dark:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed" />
                             {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
                         </div>
                         <div>
                             <label className="block text-xs font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Role</label>
                             <select value={editForm.role} onChange={e => setEditForm(f => ({ ...f, role: e.target.value }))}
-                                className="w-full px-3 py-2.5 border border-gray-300 dark:border-slate-700 dark:bg-slate-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#122b7a] dark:text-white transition-all appearance-none bg-white">
+                                disabled={selected.role === 'superadmin'}
+                                className="w-full px-3 py-2.5 border border-gray-300 dark:border-slate-700 dark:bg-slate-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#122b7a] dark:text-white transition-all appearance-none disabled:opacity-50 disabled:cursor-not-allowed">
                                 <option value="admin">Admin</option>
                                 <option value="superadmin">Superadmin</option>
                             </select>
@@ -385,7 +394,7 @@ export default function AdminManagement({ admins, search, total }: Props) {
                         </div>
                         <div className="flex gap-3 pt-2">
                             <button type="button" onClick={closeModal} className="flex-1 px-4 py-2.5 border border-gray-300 dark:border-slate-700 rounded-lg text-sm font-medium text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors">Cancel</button>
-                            <button type="submit" disabled={processing} className="flex-1 px-4 py-2.5 bg-[#122b7a] hover:bg-[#1a3d9e] text-white rounded-lg text-sm font-semibold transition-all disabled:opacity-60">
+                            <button type="submit" disabled={processing || selected.role === 'superadmin'} className="flex-1 px-4 py-2.5 bg-[#122b7a] hover:bg-[#1a3d9e] text-white rounded-lg text-sm font-semibold transition-all disabled:opacity-60 disabled:cursor-not-allowed">
                                 {processing ? 'Saving...' : 'Save Changes'}
                             </button>
                         </div>

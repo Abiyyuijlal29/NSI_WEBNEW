@@ -11,16 +11,11 @@ class CustomerServiceController extends Controller
 {
     public function index()
     {
-        // Fetch customers from Supabase
-        $url = config('services.supabase.url') . '/rest/v1/profile_customer?select=*';
-        $key = config('services.supabase.key');
-
-        $response = Http::withoutVerifying()->withHeaders([
-            'apikey'        => $key,
-            'Authorization' => 'Bearer ' . $key,
-        ])->get($url);
-
-        $rawCustomers = $response->successful() ? $response->json() : [];
+        // Fetch customers from Supabase directly
+        $rawCustomers = \Illuminate\Support\Facades\DB::table('profile_customer')
+            ->get()
+            ->map(fn($item) => (array) $item)
+            ->toArray();
 
         // Load local statuses (keyed by customer_id)
         $localStatuses = DB::table('cs_customer_statuses')

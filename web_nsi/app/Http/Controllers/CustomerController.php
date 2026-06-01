@@ -10,30 +10,22 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $url = config('services.supabase.url') . '/rest/v1/profile_customer?select=*';
-        $key = config('services.supabase.key');
-
-        $response = Http::withoutVerifying()->withHeaders([
-            'apikey' => $key,
-            'Authorization' => 'Bearer ' . $key,
-        ])->get($url);
-
-        $customers = $response->successful() ? $response->json() : [];
+        $customers = \Illuminate\Support\Facades\DB::table('profile_customer')->get();
 
         // Format data to match the frontend expectations
-        $formattedCustomers = array_map(function ($c) {
+        $formattedCustomers = $customers->map(function ($c) {
             return [
-                'id' => $c['id'] ?? '',
-                'name' => $c['nama_lengkap'] ?? 'Unknown',
-                'email' => $c['email'] ?? '',
-                'phone' => $c['no_hp'] ?? '',
+                'id' => $c->id ?? '',
+                'name' => $c->nama_lengkap ?? 'Unknown',
+                'email' => $c->email ?? '',
+                'phone' => $c->no_hp ?? '',
                 'status' => 'Active', // Default status for now
                 'lastLogin' => 'Unknown',
-                'initials' => $this->getInitials($c['nama_lengkap'] ?? 'U'),
-                'avatar' => !empty($c['foto_profil']),
-                'avatar_url' => $c['foto_profil'] ?? null,
+                'initials' => $this->getInitials($c->nama_lengkap ?? 'U'),
+                'avatar' => !empty($c->foto_profil),
+                'avatar_url' => $c->foto_profil ?? null,
             ];
-        }, $customers);
+        })->toArray();
 
         return Inertia::render('customers', [
             'customers' => $formattedCustomers,
@@ -49,10 +41,9 @@ class CustomerController extends Controller
         ]);
 
         $urlAuth = config('services.supabase.url') . '/auth/v1/signup';
-        $urlProfile = config('services.supabase.url') . '/rest/v1/profile_customer';
         $key = config('services.supabase.key');
 
-        // 1. Create User in Supabase Auth
+        // 1. Create User in Supabase Auth via API
         $authResponse = Http::withoutVerifying()->withHeaders([
             'apikey' => $key,
             'Content-Type' => 'application/json',
@@ -76,30 +67,23 @@ class CustomerController extends Controller
             return back()->withErrors(['error' => 'Failed to get user ID from auth.']);
         }
 
-        // 2. Insert into profile_customer
-        $profileResponse = Http::withoutVerifying()->withHeaders([
-            'apikey' => $key,
-            'Authorization' => 'Bearer ' . $key,
-            'Content-Type' => 'application/json',
-            'Prefer' => 'return=representation'
-        ])->post($urlProfile, [
-            'id' => $userId,
-            'nama_lengkap' => $request->nama_lengkap,
-            'email' => $request->email,
-            'no_hp' => $request->no_hp,
-        ]);
-
-        if ($profileResponse->successful()) {
+        // 2. Insert into profile_customer via direct DB query (if not auto-created by trigger)
+        try {
+            \Illuminate\Support\Facades\DB::table('profile_customer')->insert([
+                'id' => $userId,
+                'nama_lengkap' => $request->nama_lengkap,
+                'email' => $request->email,
+                'no_hp' => $request->no_hp,
+            ]);
             return back()->with('success', 'Customer added successfully.');
+        } catch (\Illuminate\Database\QueryException $e) {
+            // Unq constraints ignore
+            if (str_contains($e->getMessage(), '23505') || str_contains($e->getMessage(), 'duplicate key')) {
+                 return back()->with('success', 'Customer added successfully (profile auto-created).');
+            }
+            \Illuminate\Support\Facades\Log::error('Supabase Profile Error: ' . $e->getMessage());
+            return back()->withErrors(['error' => 'Failed to add customer profile.']);
         }
-
-        // If duplicate key value violates unique constraint on auth trigger, it's fine
-        if (str_contains($profileResponse->body(), '23505') || str_contains($profileResponse->body(), 'duplicate key')) {
-             return back()->with('success', 'Customer added successfully (profile auto-created).');
-        }
-
-        \Illuminate\Support\Facades\Log::error('Supabase Profile Error: ' . $profileResponse->body());
-        return back()->withErrors(['error' => 'Failed to add customer profile. ' . $profileResponse->body()]);
     }
 
     public function update(Request $request, $id)
@@ -110,42 +94,28 @@ class CustomerController extends Controller
             'no_hp' => 'nullable|string|max:20',
         ]);
 
-        $url = config('services.supabase.url') . '/rest/v1/profile_customer?id=eq.' . $id;
-        $key = config('services.supabase.key');
-
-        $response = Http::withoutVerifying()->withHeaders([
-            'apikey' => $key,
-            'Authorization' => 'Bearer ' . $key,
-            'Content-Type' => 'application/json',
-            'Prefer' => 'return=representation'
-        ])->patch($url, [
-            'nama_lengkap' => $request->nama_lengkap,
-            'email' => $request->email,
-            'no_hp' => $request->no_hp,
-        ]);
-
-        if ($response->successful()) {
+        try {
+            \Illuminate\Support\Facades\DB::table('profile_customer')->where('id', $id)->update([
+                'nama_lengkap' => $request->nama_lengkap,
+                'email' => $request->email,
+                'no_hp' => $request->no_hp,
+            ]);
             return back()->with('success', 'Customer updated successfully.');
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Supabase Profile Update Error: ' . $e->getMessage());
+            return back()->withErrors(['error' => 'Failed to update customer.']);
         }
-
-        return back()->withErrors(['error' => 'Failed to update customer.']);
     }
 
     public function destroy($id)
     {
-        $url = config('services.supabase.url') . '/rest/v1/profile_customer?id=eq.' . $id;
-        $key = config('services.supabase.key');
-
-        $response = Http::withoutVerifying()->withHeaders([
-            'apikey' => $key,
-            'Authorization' => 'Bearer ' . $key,
-        ])->delete($url);
-
-        if ($response->successful()) {
+        try {
+            \Illuminate\Support\Facades\DB::table('profile_customer')->where('id', $id)->delete();
             return back()->with('success', 'Customer deleted successfully.');
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Supabase Profile Delete Error: ' . $e->getMessage());
+            return back()->withErrors(['error' => 'Failed to delete customer.']);
         }
-
-        return back()->withErrors(['error' => 'Failed to delete customer.']);
     }
 
     private function getInitials($name)

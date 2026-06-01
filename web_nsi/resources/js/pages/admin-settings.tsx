@@ -39,7 +39,7 @@ export default function AdminSettings() {
                                 <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 w-full">
                                     <div>
                                         <label className="block text-sm text-gray-700 dark:text-slate-300 mb-1.5">{t('full_name')}</label>
-                                        <input type="text" defaultValue={user?.name ?? ''} className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-slate-900 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors" />
+                                        <input type="text" defaultValue={user?.name ?? ''} readOnly={user?.role === 'superadmin'} className={`w-full px-4 py-2 border rounded-md text-sm focus:outline-none transition-colors ${user?.role === 'superadmin' ? 'bg-gray-50 dark:bg-slate-800/50 border-gray-300 dark:border-slate-700 text-gray-500 dark:text-slate-400 cursor-not-allowed focus:ring-0' : 'border-gray-300 dark:border-slate-700 dark:bg-slate-900 focus:ring-1 focus:ring-blue-500'}`} />
                                     </div>
                                     <div>
                                         <label className="block text-sm text-gray-700 dark:text-slate-300 mb-1.5">{t('role')}</label>
@@ -47,12 +47,14 @@ export default function AdminSettings() {
                                     </div>
                                     <div className="md:col-span-2">
                                         <label className="block text-sm text-gray-700 dark:text-slate-300 mb-1.5">{t('email_address')}</label>
-                                        <input type="email" defaultValue={user?.email ?? ''} className="w-full md:w-[60%] px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-slate-900 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors" />
+                                        <input type="email" defaultValue={user?.email ?? ''} readOnly={user?.role === 'superadmin'} className={`w-full md:w-[60%] px-4 py-2 border rounded-md text-sm focus:outline-none transition-colors ${user?.role === 'superadmin' ? 'bg-gray-50 dark:bg-slate-800/50 border-gray-300 dark:border-slate-700 text-gray-500 dark:text-slate-400 cursor-not-allowed focus:ring-0' : 'border-gray-300 dark:border-slate-700 dark:bg-slate-900 focus:ring-1 focus:ring-blue-500'}`} />
                                     </div>
-                                    <div className="md:col-span-2 flex justify-end gap-4 mt-2">
-                                        <button type="button" className="text-sm text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white font-medium">{t('cancel')}</button>
-                                        <button type="button" className="text-sm text-gray-900 dark:text-white hover:text-black dark:hover:text-slate-300 font-medium">{t('save_changes')}</button>
-                                    </div>
+                                    {user?.role !== 'superadmin' && (
+                                        <div className="md:col-span-2 flex justify-end gap-4 mt-2">
+                                            <button type="button" className="text-sm text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white font-medium">{t('cancel')}</button>
+                                            <button type="button" className="text-sm text-gray-900 dark:text-white hover:text-black dark:hover:text-slate-300 font-medium">{t('save_changes')}</button>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </section>
