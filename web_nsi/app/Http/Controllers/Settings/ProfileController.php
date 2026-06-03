@@ -9,6 +9,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -30,13 +32,41 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = $request->user();
+        $user->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        if ($request->hasFile('avatar')) {
+            $file = $request->file('avatar');
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $supabaseUrl = rtrim(env('SUPABASE_URL'), '/');
+            $supabaseKey = env('SUPABASE_KEY');
+
+            if ($user->avatar) {
+                if (str_starts_with($user->avatar, $supabaseUrl)) {
+                    $oldFilename = basename($user->avatar);
+                    Http::withoutVerifying()->withToken($supabaseKey)
+                        ->delete("$supabaseUrl/storage/v1/object/avatars/$oldFilename");
+                } else {
+                    Storage::disk('public')->delete($user->avatar);
+                }
+            }
+
+            $response = Http::withoutVerifying()->withToken($supabaseKey)
+                ->withHeaders(['Content-Type' => $file->getMimeType()])
+                ->send('POST', "$supabaseUrl/storage/v1/object/avatars/$filename", [
+                    'body' => file_get_contents($file->getRealPath())
+                ]);
+
+            if ($response->successful()) {
+                $user->avatar = "$supabaseUrl/storage/v1/object/public/avatars/$filename";
+            }
         }
 
-        $request->user()->save();
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
+        }
+
+        $user->save();
 
         Inertia::flash('toast', ['type' => 'success', 'message' => __('Profile updated.')]);
 

@@ -15,7 +15,7 @@ class AdminManagementController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->get('search', '');
+        $search = $request->input('search', '');
 
         $admins = User::query()
             ->when($search, fn ($q) => $q->where(function ($q) use ($search) {
@@ -30,6 +30,7 @@ class AdminManagementController extends Controller
                 'name'       => $u->name,
                 'email'      => $u->email,
                 'role'       => $u->role,
+                'avatar'     => $u->avatar_url,
                 'created_at' => $u->created_at->format('d M Y'),
                 'is_self'    => $u->id === auth()->id(),
             ]);

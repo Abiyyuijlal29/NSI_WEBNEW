@@ -1,0 +1,214 @@
+[
+    {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone"
+    },
+    {
+        "column_name": "id_user",
+        "data_type": "uuid"
+    },
+    {
+        "column_name": "jumlah_tagihan",
+        "data_type": "numeric"
+    },
+    {
+        "column_name": "tanggal_pembayaran",
+        "data_type": "timestamp with time zone"
+    },
+    {
+        "column_name": "id",
+        "data_type": "bigint"
+    },
+    {
+        "column_name": "id_user",
+        "data_type": "uuid"
+    },
+    {
+        "column_name": "id",
+        "data_type": "bigint"
+    },
+    {
+        "column_name": "id",
+        "data_type": "bigint"
+    },
+    {
+        "column_name": "harga",
+        "data_type": "numeric"
+    },
+    {
+        "column_name": "is_popular",
+        "data_type": "boolean"
+    },
+    {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone"
+    },
+    {
+        "column_name": "id",
+        "data_type": "bigint"
+    },
+    {
+        "column_name": "user_id",
+        "data_type": "bigint"
+    },
+    {
+        "column_name": "created_at",
+        "data_type": "timestamp without time zone"
+    },
+    {
+        "column_name": "updated_at",
+        "data_type": "timestamp without time zone"
+    },
+    {
+        "column_name": "id",
+        "data_type": "uuid"
+    },
+    {
+        "column_name": "is_agreed",
+        "data_type": "boolean"
+    },
+    {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone"
+    },
+    {
+        "column_name": "tagihan_saat_ini",
+        "data_type": "numeric"
+    },
+    {
+        "column_name": "is_tagihan_paid",
+        "data_type": "boolean"
+    },
+    {
+        "column_name": "id",
+        "data_type": "bigint"
+    },
+    {
+        "column_name": "tanggal_pendaftaran",
+        "data_type": "timestamp with time zone"
+    },
+    {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone"
+    },
+    {
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone"
+    },
+    {
+        "column_name": "user_agent",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "status",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "nik",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "email",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "no_hp",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "nama_lengkap",
+        "data_type": "text"
+    },
+    {
+        "column_name": "email",
+        "data_type": "text"
+    },
+    {
+        "column_name": "no_hp",
+        "data_type": "text"
+    },
+    {
+        "column_name": "metode_pembayaran",
+        "data_type": "text"
+    },
+    {
+        "column_name": "status_pembayaran",
+        "data_type": "text"
+    },
+    {
+        "column_name": "nomor_invoice",
+        "data_type": "text"
+    },
+    {
+        "column_name": "alamat_lengkap",
+        "data_type": "text"
+    },
+    {
+        "column_name": "password",
+        "data_type": "text"
+    },
+    {
+        "column_name": "alamat_lengkap",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "kategori",
+        "data_type": "text"
+    },
+    {
+        "column_name": "pesan",
+        "data_type": "text"
+    },
+    {
+        "column_name": "status",
+        "data_type": "text"
+    },
+    {
+        "column_name": "paket_berlangganan",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "paket_aktif",
+        "data_type": "text"
+    },
+    {
+        "column_name": "nama_paket",
+        "data_type": "text"
+    },
+    {
+        "column_name": "foto_ktp",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "deskripsi",
+        "data_type": "text"
+    },
+    {
+        "column_name": "status_pendaftaran",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "foto_profil",
+        "data_type": "text"
+    },
+    {
+        "column_name": "password",
+        "data_type": "text"
+    },
+    {
+        "column_name": "nama_lengkap",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "activity",
+        "data_type": "character varying"
+    },
+    {
+        "column_name": "description",
+        "data_type": "text"
+    },
+    {
+        "column_name": "ip_address",
+        "data_type": "character varying"
+    }
+]

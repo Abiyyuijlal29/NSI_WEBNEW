@@ -25,14 +25,15 @@ interface CustomersProps {
 }
 
 function StatusBadge({ status }: { status: string }) {
+    const s = status.toLowerCase();
     const colors: Record<string, string> = {
-        Active: 'bg-green-50 text-green-700 border-green-200',
-        Pending: 'bg-yellow-50 text-yellow-700 border-yellow-200',
-        Banned: 'bg-red-50 text-red-700 border-red-200',
+        active: 'bg-green-50 text-green-700 border-green-200',
+        pending: 'bg-yellow-50 text-yellow-700 border-yellow-200',
+        inactive: 'bg-red-50 text-red-700 border-red-200',
     };
     return (
-        <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full border ${colors[status] || 'bg-gray-50 text-gray-600 border-gray-200'}`}>
-            {status}
+        <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full border transform capitalize ${colors[s] || 'bg-gray-50 text-gray-600 border-gray-200'}`}>
+            {s}
         </span>
     );
 }
@@ -63,28 +64,18 @@ function AvatarCircle({ initials, name, avatarUrl }: { initials: string; name: s
 }
 
 export default function Customers({ customers }: CustomersProps) {
-    const [isAddModalOpen, setIsAddModalOpen] = useState(false);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null);
 
-    const { data, setData, post, put, delete: destroy, processing, errors, reset } = useForm({
-        nama_lengkap: '',
-        email: '',
-        no_hp: '',
+    const { data, setData, put, delete: destroy, processing, reset } = useForm({
+        status: 'active',
     });
-
-    const openAddModal = () => {
-        reset();
-        setIsAddModalOpen(true);
-    };
 
     const openEditModal = (customer: Customer) => {
         setSelectedCustomer(customer);
         setData({
-            nama_lengkap: customer.name,
-            email: customer.email,
-            no_hp: customer.phone || '',
+            status: customer.status.toLowerCase(),
         });
         setIsEditModalOpen(true);
     };
@@ -92,17 +83,6 @@ export default function Customers({ customers }: CustomersProps) {
     const openDeleteModal = (customer: Customer) => {
         setSelectedCustomer(customer);
         setIsDeleteModalOpen(true);
-    };
-
-    const handleAddSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        post('/customers', {
-            onSuccess: () => {
-                setIsAddModalOpen(false);
-                reset();
-                toast.success('Customer added successfully');
-            },
-        });
     };
 
     const handleEditSubmit = (e: React.FormEvent) => {
@@ -150,14 +130,6 @@ export default function Customers({ customers }: CustomersProps) {
                                 className="pl-9 pr-4 py-2.5 w-64 rounded-lg border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm dark:text-white focus:outline-none focus:ring-2 focus:ring-[#122b7a] focus:border-transparent transition-all shadow-sm"
                             />
                         </div>
-                        {/* Add New User */}
-                        <button
-                            onClick={openAddModal}
-                            className="flex items-center gap-2 px-5 py-2.5 bg-[#122b7a] text-white text-sm font-semibold rounded-lg hover:bg-[#1a3d9e] transition-all shadow-sm active:scale-95"
-                        >
-                            <Plus className="w-4 h-4" />
-                            Add New User
-                        </button>
                     </div>
                 </div>
 
@@ -229,91 +201,25 @@ export default function Customers({ customers }: CustomersProps) {
                 </div>
             </div>
 
-            {/* Add Modal */}
-            <Dialog open={isAddModalOpen} onOpenChange={setIsAddModalOpen}>
-                <DialogContent>
-                    <DialogHeader>
-                        <DialogTitle>Add New Customer</DialogTitle>
-                    </DialogHeader>
-                    <form onSubmit={handleAddSubmit} className="space-y-4 py-4">
-                        <div className="space-y-2">
-                            <Label htmlFor="add-name">Full Name</Label>
-                            <Input
-                                id="add-name"
-                                value={data.nama_lengkap}
-                                onChange={(e) => setData('nama_lengkap', e.target.value)}
-                                required
-                            />
-                            {errors.nama_lengkap && <p className="text-sm text-red-500">{errors.nama_lengkap}</p>}
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="add-email">Email Address</Label>
-                            <Input
-                                id="add-email"
-                                type="email"
-                                value={data.email}
-                                onChange={(e) => setData('email', e.target.value)}
-                                required
-                            />
-                            {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="add-phone">Phone Number</Label>
-                            <Input
-                                id="add-phone"
-                                value={data.no_hp}
-                                onChange={(e) => setData('no_hp', e.target.value)}
-                            />
-                            {errors.no_hp && <p className="text-sm text-red-500">{errors.no_hp}</p>}
-                        </div>
-                        <DialogFooter>
-                            <Button type="button" variant="outline" onClick={() => setIsAddModalOpen(false)}>
-                                Cancel
-                            </Button>
-                            <Button type="submit" disabled={processing} className="bg-[#122b7a] hover:bg-[#1a3d9e] text-white">
-                                Save
-                            </Button>
-                        </DialogFooter>
-                    </form>
-                </DialogContent>
-            </Dialog>
-
-            {/* Edit Modal */}
+            {/* Edit Modal (Status Only) */}
             <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
                 <DialogContent>
                     <DialogHeader>
-                        <DialogTitle>Edit Customer</DialogTitle>
+                        <DialogTitle>Update Status - {selectedCustomer?.name}</DialogTitle>
                     </DialogHeader>
                     <form onSubmit={handleEditSubmit} className="space-y-4 py-4">
                         <div className="space-y-2">
-                            <Label htmlFor="edit-name">Full Name</Label>
-                            <Input
-                                id="edit-name"
-                                value={data.nama_lengkap}
-                                onChange={(e) => setData('nama_lengkap', e.target.value)}
-                                required
-                            />
-                            {errors.nama_lengkap && <p className="text-sm text-red-500">{errors.nama_lengkap}</p>}
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="edit-email">Email Address</Label>
-                            <Input
-                                id="edit-email"
-                                type="email"
-                                value={data.email}
-                                onChange={(e) => setData('email', e.target.value)}
-                                required
-                            />
-                            {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="edit-phone">Phone Number</Label>
-                            <Input
-                                id="edit-phone"
-                                value={data.no_hp}
-                                onChange={(e) => setData('no_hp', e.target.value)}
-                            />
-                            {errors.no_hp && <p className="text-sm text-red-500">{errors.no_hp}</p>}
+                            <Label htmlFor="edit-status">Customer Status</Label>
+                            <select
+                                id="edit-status"
+                                value={data.status}
+                                onChange={(e) => setData('status', e.target.value)}
+                                className="w-full h-10 px-3 py-2 rounded-md border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#122b7a] transition-all"
+                            >
+                                <option value="active">Active</option>
+                                <option value="pending">Pending</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
                         </div>
                         <DialogFooter>
                             <Button type="button" variant="outline" onClick={() => setIsEditModalOpen(false)}>

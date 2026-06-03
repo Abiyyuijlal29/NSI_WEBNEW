@@ -14,7 +14,6 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     Route::get('customers', [\App\Http\Controllers\CustomerController::class, 'index'])->name('customers');
-    Route::post('customers', [\App\Http\Controllers\CustomerController::class, 'store'])->name('customers.store');
     Route::put('customers/{id}', [\App\Http\Controllers\CustomerController::class, 'update'])->name('customers.update');
     Route::delete('customers/{id}', [\App\Http\Controllers\CustomerController::class, 'destroy'])->name('customers.destroy');
     Route::get('notifications', [\App\Http\Controllers\CustomerServiceController::class, 'index'])->name('notifications');
@@ -30,8 +29,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 // Routes accessible by superadmin only
 Route::middleware(['auth', 'verified', 'superadmin'])->group(function () {
-    Route::inertia('admin-settings', 'admin-settings')->name('admin-settings');
-
     // Admin Management
     Route::get('admin-management', [\App\Http\Controllers\AdminManagementController::class, 'index'])->name('admin-management');
     Route::post('admin-management', [\App\Http\Controllers\AdminManagementController::class, 'store'])->name('admin-management.store');

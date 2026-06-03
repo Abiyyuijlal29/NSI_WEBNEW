@@ -4,12 +4,15 @@ import {
     Search, Plus, Pencil, Trash2, KeyRound,
     ShieldCheck, Shield, X, Eye, EyeOff, CheckCircle, AlertCircle, Users
 } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useInitials } from '@/hooks/use-initials';
 
 interface Admin {
     id: number;
     name: string;
     email: string;
     role: 'admin' | 'superadmin';
+    avatar?: string;
     created_at: string;
     is_self: boolean;
 }
@@ -39,15 +42,15 @@ function RoleBadge({ role }: { role: string }) {
     );
 }
 
-function InitialsAvatar({ name, role }: { name: string; role: string }) {
-    const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
-    const cls = role === 'superadmin'
-        ? 'bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300'
-        : 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300';
+function AdminAvatar({ admin }: { admin: Admin }) {
+    const getInitials = useInitials();
     return (
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0 ${cls}`}>
-            {initials}
-        </div>
+        <Avatar className="w-10 h-10 overflow-hidden rounded-full shrink-0 shadow-sm border border-gray-200 dark:border-slate-700">
+            <AvatarImage src={admin.avatar} alt={admin.name} className="object-cover" />
+            <AvatarFallback className="bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white font-bold text-sm">
+                {getInitials(admin.name)}
+            </AvatarFallback>
+        </Avatar>
     );
 }
 
@@ -257,7 +260,7 @@ export default function AdminManagement({ admins, search, total }: Props) {
                                     <tr key={admin.id} className="hover:bg-gray-50 dark:hover:bg-slate-800/40 transition-colors">
                                         <td className="px-6 py-4">
                                             <div className="flex items-center gap-3">
-                                                <InitialsAvatar name={admin.name} role={admin.role} />
+                                                <AdminAvatar admin={admin} />
                                                 <div>
                                                     <p className="text-sm font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                                                         {admin.name}

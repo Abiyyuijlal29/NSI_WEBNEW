@@ -27,3 +27,7 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+# Test & setup scripts (remove before production)
+test*.php
+setup_*.php

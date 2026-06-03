@@ -40,19 +40,46 @@ class CustomerServiceController extends Controller
             ];
         }, $rawCustomers);
 
-        // Fetch complaints from local DB
-        $complaints = DB::table('cs_complaints')
-            ->orderBy('created_at', 'desc')
-            ->get()
-            ->map(fn($c) => (array) $c)
-            ->toArray();
+        $rawComplaints = DB::table('pengaduan')
+            ->join('profile_customer', 'pengaduan.id_user', '=', 'profile_customer.id')
+            ->select(
+                'pengaduan.id',
+                'profile_customer.id as customer_id',
+                'profile_customer.nama_lengkap as customer_name',
+                'profile_customer.email as customer_email',
+                'profile_customer.no_hp as customer_phone',
+                'pengaduan.kategori as subject',
+                'pengaduan.pesan as message',
+                'pengaduan.status',
+                'pengaduan.created_at'
+            )
+            ->orderBy('pengaduan.created_at', 'desc')
+            ->get();
 
-        // Fetch messages
-        $messages = DB::table('cs_messages')
-            ->orderBy('created_at', 'desc')
-            ->get()
-            ->map(fn($m) => (array) $m)
-            ->toArray();
+        $complaints = $rawComplaints->map(function ($c) {
+            $statusRaw = strtolower($c->status ?? '');
+            
+            // Default mapping
+            $mappedStatus = 'open';
+            if (in_array($statusRaw, ['selesai', 'ditutup', 'closed'])) {
+                $mappedStatus = 'closed';
+            } elseif (in_array($statusRaw, ['diproses', 'sedang diproses', 'in_progress', 'terjadwal'])) {
+                $mappedStatus = 'in_progress';
+            }
+
+            return [
+                'id'             => $c->id,
+                'customer_id'    => $c->customer_id,
+                'customer_name'  => $c->customer_name ?: 'Unknown',
+                'customer_email' => $c->customer_email ?: '-',
+                'customer_phone' => $c->customer_phone ?: '',
+                'subject'        => $c->subject ?: 'Tanpa Kategori',
+                'message'        => $c->message ?: '-',
+                'status'         => $mappedStatus,
+                'priority'       => 'medium', // Default
+                'created_at'     => $c->created_at,
+            ];
+        })->toArray();
 
         $stats = [
             'total'           => count($customers),
@@ -65,7 +92,6 @@ class CustomerServiceController extends Controller
         return Inertia::render('notifications', [
             'customers'  => array_values($customers),
             'complaints' => $complaints,
-            'messages'   => $messages,
             'stats'      => $stats,
         ]);
     }
@@ -100,16 +126,14 @@ class CustomerServiceController extends Controller
             'priority'       => 'sometimes|in:low,medium,high',
         ]);
 
-        DB::table('cs_complaints')->insert([
-            'customer_id'    => $request->customer_id,
-            'customer_name'  => $request->customer_name,
-            'customer_email' => $request->customer_email,
-            'subject'        => $request->subject,
-            'message'        => $request->message,
-            'status'         => 'open',
-            'priority'       => $request->priority ?? 'medium',
-            'created_at'     => now(),
-            'updated_at'     => now(),
+        // Opsional: Untuk web yang ingin buat complaint manual kita bisa arahkan ke tabel pengaduan juga, tapi structure berbeda.
+        // Asumsi form ini tidak diubah tapi kita simpan di pengaduan
+        DB::table('pengaduan')->insert([
+            'id_user'    => $request->customer_id,
+            'kategori'   => $request->subject,
+            'pesan'      => $request->message,
+            'status'     => 'Terbuka',
+            // jangan insert array priority / customer_name krn pengaduan pakai relasi
         ]);
 
         return back()->with('success', 'Keluhan berhasil dicatat.');
@@ -121,37 +145,18 @@ class CustomerServiceController extends Controller
             'status' => 'required|in:open,in_progress,resolved,closed',
         ]);
 
-        DB::table('cs_complaints')->where('id', $id)->update([
-            'status'     => $request->status,
-            'updated_at' => now(),
+        $dbStatus = 'Terbuka';
+        if ($request->status === 'in_progress') {
+            $dbStatus = 'Diproses';
+        } elseif (in_array($request->status, ['resolved', 'closed'])) {
+            $dbStatus = 'Selesai';
+        }
+
+        DB::table('pengaduan')->where('id', $id)->update([
+            'status'     => $dbStatus,
         ]);
 
         return back()->with('success', 'Status keluhan diperbarui.');
-    }
-
-    public function sendMessage(Request $request)
-    {
-        $request->validate([
-            'customer_id'    => 'required|string',
-            'customer_name'  => 'required|string|max:255',
-            'customer_email' => 'required|email|max:255',
-            'message'        => 'required|string',
-            'complaint_id'   => 'nullable|integer|exists:cs_complaints,id',
-        ]);
-
-        DB::table('cs_messages')->insert([
-            'complaint_id'   => $request->complaint_id ?: null,
-            'customer_id'    => $request->customer_id,
-            'customer_name'  => $request->customer_name,
-            'customer_email' => $request->customer_email,
-            'message'        => $request->message,
-            'sender'         => 'admin',
-            'is_read'        => false,
-            'created_at'     => now(),
-            'updated_at'     => now(),
-        ]);
-
-        return back()->with('success', 'Pesan berhasil dikirim ke customer.');
     }
 
     private function getInitials($name)

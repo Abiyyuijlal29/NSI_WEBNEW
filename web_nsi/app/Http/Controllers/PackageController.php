@@ -26,14 +26,22 @@ class PackageController extends Controller
 
     public function index()
     {
-        $response = Http::withoutVerifying()
-            ->withHeaders($this->supabaseHeaders())
-            ->get($this->baseUrl() . '?select=*&order=created_at.desc');
+        try {
+            $response = Http::withoutVerifying()
+                ->timeout(10)
+                ->withHeaders($this->supabaseHeaders())
+                ->get($this->baseUrl() . '?select=*&order=created_at.desc');
 
-        $packages = $response->successful() ? $response->json() : [];
+            $packages = $response->successful() ? $response->json() : [];
+            $connectionError = null;
+        } catch (\Illuminate\Http\Client\ConnectionException $e) {
+            $packages = [];
+            $connectionError = 'Tidak dapat terhubung ke server Supabase. Periksa koneksi internet Anda.';
+        }
 
         return Inertia::render('content-manager', [
-            'packages' => $packages,
+            'packages'        => $packages,
+            'connection_error' => $connectionError ?? null,
         ]);
     }
 

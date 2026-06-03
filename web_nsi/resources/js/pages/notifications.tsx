@@ -24,22 +24,11 @@ interface Complaint {
     customer_id: string;
     customer_name: string;
     customer_email: string;
+    customer_phone?: string;
     subject: string;
     message: string;
     status: 'open' | 'in_progress' | 'resolved' | 'closed';
     priority: 'low' | 'medium' | 'high';
-    created_at: string;
-}
-
-interface Message {
-    id: number;
-    complaint_id?: number;
-    customer_id: string;
-    customer_name: string;
-    customer_email: string;
-    message: string;
-    sender: 'admin' | 'customer';
-    is_read: boolean;
     created_at: string;
 }
 
@@ -54,7 +43,6 @@ interface Stats {
 interface Props {
     customers: Customer[];
     complaints: Complaint[];
-    messages: Message[];
     stats: Stats;
 }
 
@@ -269,87 +257,6 @@ function ComplaintModal({ customers, onClose }: { customers: Customer[]; onClose
     );
 }
 
-// ─── Modal: Send Message ──────────────────────────────────────────────────────
-
-function MessageModal({ customers, complaints, onClose }: { customers: Customer[]; complaints: Complaint[]; onClose: () => void }) {
-    const { data, setData, post, processing } = useForm({
-        customer_id: '',
-        customer_name: '',
-        customer_email: '',
-        message: '',
-        complaint_id: '',
-    });
-
-    function selectCustomer(c: Customer) {
-        setData({ ...data, customer_id: c.id, customer_name: c.name, customer_email: c.email });
-    }
-
-    function submit(e: React.FormEvent) {
-        e.preventDefault();
-        post('/customer-service/send-message', { onSuccess: onClose });
-    }
-
-    const customerComplaints = complaints.filter(c => c.customer_id === data.customer_id);
-
-    return (
-        <Overlay onClose={onClose} wide>
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Kirim Pesan ke Customer</h2>
-            <p className="text-sm text-gray-500 dark:text-slate-400 mb-5">Kirimkan pesan balasan atau informasi ke pelanggan.</p>
-            <form onSubmit={submit} className="space-y-4">
-                <div>
-                    <label className="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Pilih Pelanggan</label>
-                    <select
-                        value={data.customer_id}
-                        onChange={(e) => {
-                            const c = customers.find(x => x.id === e.target.value);
-                            if (c) selectCustomer(c);
-                        }}
-                        className="w-full px-3 py-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#122b7a]"
-                    >
-                        <option value="">-- Pilih Pelanggan --</option>
-                        {customers.map(c => (
-                            <option key={c.id} value={c.id}>{c.name} ({c.email})</option>
-                        ))}
-                    </select>
-                </div>
-
-                {customerComplaints.length > 0 && (
-                    <div>
-                        <label className="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Keluhan Terkait (Opsional)</label>
-                        <select value={data.complaint_id} onChange={(e) => setData('complaint_id', e.target.value)}
-                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#122b7a]">
-                            <option value="">-- Tidak ada keluhan terkait --</option>
-                            {customerComplaints.map(c => (
-                                <option key={c.id} value={c.id}>#{c.id} – {c.subject}</option>
-                            ))}
-                        </select>
-                    </div>
-                )}
-
-                <div>
-                    <label className="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Pesan</label>
-                    <textarea value={data.message} onChange={e => setData('message', e.target.value)}
-                        placeholder="Tulis pesan untuk customer..."
-                        rows={5}
-                        className="w-full px-3 py-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#122b7a] resize-none" />
-                </div>
-
-                <div className="flex gap-3 pt-2">
-                    <button type="button" onClick={onClose}
-                        className="flex-1 py-2.5 text-sm font-semibold rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-all">
-                        Batal
-                    </button>
-                    <button type="submit" disabled={processing || !data.customer_id || !data.message}
-                        className="flex-1 py-2.5 text-sm font-semibold rounded-lg bg-[#122b7a] text-white hover:bg-[#1a3d9e] disabled:opacity-60 transition-all shadow-sm flex items-center justify-center gap-2">
-                        <Send className="w-4 h-4" />
-                        {processing ? 'Mengirim...' : 'Kirim Pesan'}
-                    </button>
-                </div>
-            </form>
-        </Overlay>
-    );
-}
-
 // ─── Overlay wrapper ──────────────────────────────────────────────────────────
 
 function Overlay({ children, onClose, wide = false }: { children: React.ReactNode; onClose: () => void; wide?: boolean }) {
@@ -368,16 +275,15 @@ function Overlay({ children, onClose, wide = false }: { children: React.ReactNod
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
-type Tab = 'customers' | 'complaints' | 'messages';
+type Tab = 'customers' | 'complaints';
 
-export default function Notifications({ customers, complaints, messages, stats }: Props) {
+export default function Notifications({ customers, complaints, stats }: Props) {
     const [activeTab, setActiveTab] = useState<Tab>('customers');
     const [search, setSearch] = useState('');
     const [statusFilter, setStatusFilter] = useState<string>('all');
 
     const [statusModal, setStatusModal] = useState<Customer | null>(null);
     const [complaintModal, setComplaintModal] = useState(false);
-    const [messageModal, setMessageModal] = useState(false);
 
     // Filtered customers
     const filteredCustomers = customers.filter(c => {
@@ -412,7 +318,6 @@ export default function Notifications({ customers, complaints, messages, stats }
             {/* Modals */}
             {statusModal   && <StatusModal    customer={statusModal} onClose={() => setStatusModal(null)} />}
             {complaintModal && <ComplaintModal customers={customers} onClose={() => setComplaintModal(false)} />}
-            {messageModal   && <MessageModal  customers={customers} complaints={complaints} onClose={() => setMessageModal(false)} />}
 
             <div className="p-6 md:p-8 max-w-[1600px] w-full mx-auto flex flex-col gap-6">
 
@@ -432,17 +337,10 @@ export default function Notifications({ customers, complaints, messages, stats }
                     <div className="flex items-center gap-2">
                         <button
                             onClick={() => setComplaintModal(true)}
-                            className="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-sm font-semibold text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 transition-all shadow-sm"
+                            className="flex items-center gap-2 px-4 py-2.5 bg-[#122b7a] text-white text-sm font-semibold rounded-lg hover:bg-[#1a3d9e] transition-all shadow-sm active:scale-95"
                         >
-                            <AlertCircle className="w-4 h-4 text-rose-500" />
+                            <AlertCircle className="w-4 h-4" />
                             Catat Keluhan
-                        </button>
-                        <button
-                            onClick={() => setMessageModal(true)}
-                            className="flex items-center gap-2 px-5 py-2.5 bg-[#122b7a] text-white text-sm font-semibold rounded-lg hover:bg-[#1a3d9e] transition-all shadow-sm active:scale-95"
-                        >
-                            <Send className="w-4 h-4" />
-                            Kirim Pesan
                         </button>
                     </div>
                 </div>
@@ -469,7 +367,6 @@ export default function Notifications({ customers, complaints, messages, stats }
                         {([
                             { key: 'customers',   label: 'Pelanggan',  icon: Users          },
                             { key: 'complaints',  label: 'Keluhan',    icon: AlertCircle    },
-                            { key: 'messages',    label: 'Pesan Terkirim', icon: MessageSquare },
                         ] as const).map(t => {
                             const TIcon = t.icon;
                             return (
@@ -572,11 +469,19 @@ export default function Notifications({ customers, complaints, messages, stats }
                                                         Ubah Status
                                                     </button>
                                                     <button
-                                                        onClick={() => { setMessageModal(true); }}
-                                                        className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
-                                                        title="Kirim Pesan"
+                                                        onClick={() => {
+                                                            if (c.phone) {
+                                                                const formatted = c.phone.replace(/^0/, '62');
+                                                                window.open(`https://wa.me/${formatted}`, '_blank');
+                                                            } else {
+                                                                alert('Nomor HP pelanggan tidak tersedia.');
+                                                            }
+                                                        }}
+                                                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-green-50 text-green-600 border border-green-200 hover:bg-green-100 transition-all"
+                                                        title="Hubungi via WhatsApp"
                                                     >
-                                                        <Send className="w-4 h-4 text-gray-400" />
+                                                        <MessageCircle className="w-3.5 h-3.5" />
+                                                        WhatsApp
                                                     </button>
                                                 </div>
                                             </td>
@@ -620,13 +525,25 @@ export default function Notifications({ customers, complaints, messages, stats }
                                         </div>
                                         <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">{c.subject}</h3>
                                         <p className="text-sm text-gray-500 dark:text-slate-400 line-clamp-2">{c.message}</p>
-                                        <div className="flex items-center gap-3 mt-2">
+                                        <div className="flex items-center gap-3 mt-4">
                                             <span className="text-xs text-gray-400 dark:text-slate-500 flex items-center gap-1">
                                                 <Users className="w-3 h-3" /> {c.customer_name}
                                             </span>
                                             <span className="text-xs text-gray-400 dark:text-slate-500 flex items-center gap-1">
                                                 <Clock className="w-3 h-3" /> {formatDate(c.created_at)}
                                             </span>
+                                            {c.customer_phone && (
+                                                <button
+                                                    onClick={() => {
+                                                        const formatted = (c.customer_phone as string).replace(/^0/, '62');
+                                                        window.open(`https://wa.me/${formatted}`, '_blank');
+                                                    }}
+                                                    className="inline-flex ml-2 items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold rounded bg-green-50 text-green-600 hover:bg-green-100 transition-all"
+                                                    title="Hubungi via WhatsApp"
+                                                >
+                                                    <MessageCircle className="w-3 h-3" /> HUBUNGI CUSTOMER
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-2 shrink-0">
@@ -646,68 +563,6 @@ export default function Notifications({ customers, complaints, messages, stats }
                                                 </button>
                                             ))}
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
-
-                {/* ══ TAB: Messages ═══════════════════════════════════════════ */}
-                {activeTab === 'messages' && (
-                    <div className="flex flex-col gap-3">
-                        {messages.length === 0 ? (
-                            <div className="bg-white dark:bg-slate-900 rounded-xl border border-gray-100 dark:border-slate-800 p-12 text-center">
-                                <MessageSquare className="w-12 h-12 text-gray-300 dark:text-slate-700 mx-auto mb-3" />
-                                <p className="text-gray-400 dark:text-slate-500 text-sm">Belum ada pesan yang terkirim.</p>
-                                <button
-                                    onClick={() => setMessageModal(true)}
-                                    className="mt-4 flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-[#122b7a] text-white hover:bg-[#1a3d9e] transition-all mx-auto"
-                                >
-                                    <Send className="w-4 h-4" /> Kirim Pesan Pertama
-                                </button>
-                            </div>
-                        ) : messages.map((m) => (
-                            <div key={m.id}
-                                className={`bg-white dark:bg-slate-900 rounded-xl border shadow-[0_2px_8px_rgba(0,0,0,0.02)] p-4 hover:shadow-md transition-all ${
-                                    m.sender === 'admin'
-                                        ? 'border-blue-100 dark:border-blue-900/40 border-l-4 border-l-[#122b7a]'
-                                        : 'border-gray-100 dark:border-slate-800 border-l-4 border-l-gray-300 dark:border-l-slate-600'
-                                }`}
-                            >
-                                <div className="flex items-start gap-3">
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold ${
-                                        m.sender === 'admin' ? 'bg-[#122b7a] text-white' : 'bg-gray-200 dark:bg-slate-700 text-gray-600 dark:text-slate-300'
-                                    }`}>
-                                        {m.sender === 'admin' ? 'CS' : m.customer_name.slice(0, 2).toUpperCase()}
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                        <div className="flex items-center justify-between gap-2 mb-1">
-                                            <div className="flex items-center gap-2">
-                                                <span className="text-sm font-semibold text-gray-900 dark:text-white">
-                                                    {m.sender === 'admin' ? 'Admin CS' : m.customer_name}
-                                                </span>
-                                                <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${
-                                                    m.sender === 'admin'
-                                                        ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
-                                                        : 'bg-gray-100 text-gray-600 dark:bg-slate-800 dark:text-slate-400'
-                                                }`}>
-                                                    {m.sender === 'admin' ? 'Admin' : 'Customer'}
-                                                </span>
-                                                {m.complaint_id && (
-                                                    <span className="text-xs text-gray-400 dark:text-slate-500">Keluhan #{m.complaint_id}</span>
-                                                )}
-                                            </div>
-                                            <span className="text-xs text-gray-400 dark:text-slate-500 whitespace-nowrap shrink-0">
-                                                {formatDate(m.created_at)}
-                                            </span>
-                                        </div>
-                                        <p className="text-sm text-gray-600 dark:text-slate-300">{m.message}</p>
-                                        {m.sender === 'admin' && (
-                                            <p className="text-xs text-gray-400 dark:text-slate-500 mt-1 flex items-center gap-1">
-                                                <Mail className="w-3 h-3" /> Dikirim ke: {m.customer_email}
-                                            </p>
-                                        )}
                                     </div>
                                 </div>
                             </div>

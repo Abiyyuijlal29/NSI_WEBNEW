@@ -1,0 +1,23 @@
+﻿Creating bucket 'avatars' at https://tjbgohixjcduwmiilrmn.supabase.co/storage/v1/bucket...
+
+   Illuminate\Http\Client\ConnectionException 
+
+  cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://tjbgohixjcduwmiilrmn.supabase.co/storage/v1/bucket
+
+  at vendor\laravel\framework\src\Illuminate\Http\Client\PendingRequest.php:1828
+    1824Γûò      * @throws \Illuminate\Http\Client\ConnectionException
+    1825Γûò      */
+    1826Γûò     protected function marshalRequestExceptionWithoutResponse(RequestException $e)
+    1827Γûò     {
+  Γ₧£ 1828Γûò         $exception = new ConnectionException($e->getMessage(), 0, $e);
+    1829Γûò 
+    1830Γûò         $request = (new Request($e->getRequest()))->setRequestAttributes($this->attributes);
+    1831Γûò 
+    1832Γûò         $this->factory?->recordRequestResponsePair(
+
+  1   vendor\laravel\framework\src\Illuminate\Http\Client\PendingRequest.php:1085
+      Illuminate\Http\Client\PendingRequest::marshalRequestExceptionWithoutResponse()
+
+  2   vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php:278
+      GuzzleHttp\Exception\RequestException::("cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://tjbgohixjcduwmiilrmn.supabase.co/storage/v1/bucket")
+

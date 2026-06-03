@@ -10,16 +10,21 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $customers = \Illuminate\Support\Facades\DB::table('profile_customer')->get();
+        $customers = \Illuminate\Support\Facades\DB::table('profile_customer')
+            ->leftJoin('cs_customer_statuses', \Illuminate\Support\Facades\DB::raw('CAST(profile_customer.id AS TEXT)'), '=', 'cs_customer_statuses.customer_id')
+            ->select('profile_customer.*', 'cs_customer_statuses.status as customer_status')
+            ->get();
 
         // Format data to match the frontend expectations
         $formattedCustomers = $customers->map(function ($c) {
+            $status = $c->customer_status ?? 'active';
+            
             return [
                 'id' => $c->id ?? '',
                 'name' => $c->nama_lengkap ?? 'Unknown',
                 'email' => $c->email ?? '',
                 'phone' => $c->no_hp ?? '',
-                'status' => 'Active', // Default status for now
+                'status' => $status,
                 'lastLogin' => 'Unknown',
                 'initials' => $this->getInitials($c->nama_lengkap ?? 'U'),
                 'avatar' => !empty($c->foto_profil),
@@ -32,78 +37,25 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'nama_lengkap' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'no_hp' => 'nullable|string|max:20',
-        ]);
-
-        $urlAuth = config('services.supabase.url') . '/auth/v1/signup';
-        $key = config('services.supabase.key');
-
-        // 1. Create User in Supabase Auth via API
-        $authResponse = Http::withoutVerifying()->withHeaders([
-            'apikey' => $key,
-            'Content-Type' => 'application/json',
-        ])->post($urlAuth, [
-            'email' => $request->email,
-            'password' => \Illuminate\Support\Str::random(12),
-            'data' => [
-                'full_name' => $request->nama_lengkap
-            ]
-        ]);
-
-        if (!$authResponse->successful()) {
-            \Illuminate\Support\Facades\Log::error('Supabase Auth Error: ' . $authResponse->body());
-            return back()->withErrors(['error' => 'Failed to create user auth. ' . $authResponse->body()]);
-        }
-
-        $authData = $authResponse->json();
-        $userId = $authData['user']['id'] ?? ($authData['id'] ?? null);
-
-        if (!$userId) {
-            return back()->withErrors(['error' => 'Failed to get user ID from auth.']);
-        }
-
-        // 2. Insert into profile_customer via direct DB query (if not auto-created by trigger)
-        try {
-            \Illuminate\Support\Facades\DB::table('profile_customer')->insert([
-                'id' => $userId,
-                'nama_lengkap' => $request->nama_lengkap,
-                'email' => $request->email,
-                'no_hp' => $request->no_hp,
-            ]);
-            return back()->with('success', 'Customer added successfully.');
-        } catch (\Illuminate\Database\QueryException $e) {
-            // Unq constraints ignore
-            if (str_contains($e->getMessage(), '23505') || str_contains($e->getMessage(), 'duplicate key')) {
-                 return back()->with('success', 'Customer added successfully (profile auto-created).');
-            }
-            \Illuminate\Support\Facades\Log::error('Supabase Profile Error: ' . $e->getMessage());
-            return back()->withErrors(['error' => 'Failed to add customer profile.']);
-        }
-    }
-
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama_lengkap' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'no_hp' => 'nullable|string|max:20',
+            'status' => 'required|string|in:active,inactive,pending',
         ]);
 
         try {
-            \Illuminate\Support\Facades\DB::table('profile_customer')->where('id', $id)->update([
-                'nama_lengkap' => $request->nama_lengkap,
-                'email' => $request->email,
-                'no_hp' => $request->no_hp,
-            ]);
-            return back()->with('success', 'Customer updated successfully.');
+            \Illuminate\Support\Facades\DB::table('cs_customer_statuses')->updateOrInsert(
+                ['customer_id' => $id],
+                [
+                    'status'     => $request->status,
+                    'updated_at' => now(),
+                    'created_at' => now(), // only used on insert but fine
+                ]
+            );
+            return back()->with('success', 'Customer status updated successfully.');
         } catch (\Exception $e) {
-            \Illuminate\Support\Facades\Log::error('Supabase Profile Update Error: ' . $e->getMessage());
-            return back()->withErrors(['error' => 'Failed to update customer.']);
+            \Illuminate\Support\Facades\Log::error('Status Update Error: ' . $e->getMessage());
+            return back()->withErrors(['error' => 'Failed to update customer status.']);
         }
     }
 

@@ -3,11 +3,14 @@ import ProfileController from '@/actions/App/Http/Controllers/Settings/ProfileCo
 import DeleteUser from '@/components/delete-user';
 import Heading from '@/components/heading';
 import InputError from '@/components/input-error';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { edit } from '@/routes/profile';
 import { send } from '@/routes/verification';
+import { Camera } from 'lucide-react';
+import { useRef, useState } from 'react';
 
 export default function Profile({
     mustVerifyEmail,
@@ -17,6 +20,8 @@ export default function Profile({
     status?: string;
 }) {
     const { auth } = usePage().props;
+    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     return (
         <>
@@ -36,10 +41,56 @@ export default function Profile({
                     options={{
                         preserveScroll: true,
                     }}
+                    onSuccess={() => {
+                        setPreviewUrl(null);
+                    }}
                     className="space-y-6"
                 >
                     {({ processing, errors }) => (
                         <>
+                            <div className="flex items-center gap-6 pb-2">
+                                <div className="relative group cursor-pointer" onClick={() => fileInputRef.current?.click()}>
+                                    <Avatar className="size-24 border-2 border-muted transition-colors group-hover:border-primary/50">
+                                        <AvatarImage src={previewUrl || auth.user.avatar || undefined} className="object-cover" />
+                                        <AvatarFallback className="text-xl bg-primary/10 text-primary">
+                                            {auth.user.name.charAt(0).toUpperCase()}
+                                        </AvatarFallback>
+                                    </Avatar>
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                        <Camera className="size-7" />
+                                    </div>
+                                    <input
+                                        type="file"
+                                        name="avatar"
+                                        ref={fileInputRef}
+                                        className="hidden"
+                                        accept="image/*"
+                                        onChange={(e) => {
+                                            const file = e.target.files?.[0];
+                                            if (file) {
+                                                setPreviewUrl(URL.createObjectURL(file));
+                                            }
+                                        }}
+                                    />
+                                </div>
+                                <div className="space-y-1.5">
+                                    <h3 className="text-sm font-medium leading-none">Profile Picture</h3>
+                                    <p className="text-[13px] text-muted-foreground">
+                                        Click onto the image or use the button below to upload a new one.
+                                    </p>
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        size="sm"
+                                        className="mt-2"
+                                        onClick={() => fileInputRef.current?.click()}
+                                    >
+                                        Change Photo
+                                    </Button>
+                                    <InputError message={errors.avatar} className="mt-1" />
+                                </div>
+                            </div>
+
                             <div className="grid gap-2">
                                 <Label htmlFor="name">Name</Label>
 

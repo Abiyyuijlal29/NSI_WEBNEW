@@ -5,7 +5,7 @@ import { Spinner } from '@/components/ui/spinner';
 import { register } from '@/routes';
 import { store } from '@/routes/login';
 import { request } from '@/routes/password';
-import { Network, Mail, Lock } from 'lucide-react';
+import { Mail, Lock } from 'lucide-react';
 
 type Props = {
     status?: string;
@@ -38,19 +38,20 @@ export default function Login({
 
                 {/* Logo */}
                 <div className="relative z-10 flex items-center gap-3">
-                    <div className="bg-white text-[#122b7a] p-2 rounded-lg shadow-md">
-                        <Network className="w-6 h-6" />
+                    <img src="/nsi-logo.png" alt="NSI Logo" className="h-14 w-14 object-contain rounded-xl bg-white p-1 shadow-md" />
+                    <div className="flex flex-col leading-tight">
+                        <span className="text-2xl font-bold tracking-wide">NSI</span>
+                        <span className="text-sm text-blue-200 font-medium">Net Satu Internews</span>
                     </div>
-                    <span className="text-2xl font-bold tracking-wide">NSI</span>
                 </div>
 
                 {/* Main Text */}
                 <div className="relative z-10 max-w-lg mb-20 mt-20">
                     <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                        Securing the world's most critical infrastructure.
+                        Semangat Bertugas, Admin NSI!
                     </h1>
                     <p className="text-lg text-blue-100/90 leading-relaxed font-light">
-                        Advanced network intelligence and control for enterprise systems. Ensure reliability, monitor threats, and manage your infrastructure with absolute clarity.
+                        Terima kasih atas dedikasi luar biasa Anda. Mari berikan performa terbaik hari ini, pastikan keandalan sistem, dan hadirkan kualitas layanan yang optimal untuk seluruh pengguna Net Satu Internews. Kesuksesan jaringan ada di tangan kita!
                     </p>
                 </div>
 
@@ -66,8 +67,8 @@ export default function Login({
             <div className="w-full lg:w-1/2 flex items-center justify-center bg-[#f8fafc] p-6 sm:p-12 relative">
                 <div className="w-full max-w-[420px]">
                     <div className="mb-8">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Sign in to NSI Admin</h2>
-                        <p className="text-gray-500 text-sm">Enter your credentials to access the dashboard.</p>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Sign in to NSI</h2>
+                        <p className="text-gray-500 text-sm">Net Satu Internews — Masukkan kredensial Anda untuk mengakses dasbor.</p>
                     </div>
 
                     <div className="bg-white p-8 rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-gray-100">
