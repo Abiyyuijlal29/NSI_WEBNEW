@@ -2,44 +2,21 @@
 # Wayfinder Vite plugin needs PHP during `npm run build` to introspect routes
 FROM php:8.3-cli AS builder
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libwebp-dev \
-    libzip-dev \
-    libicu-dev \
-    libonig-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    libpq-dev \
-    libxml2-dev \
-    curl \
-    unzip \
-    git \
-    ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install PHP extensions
-RUN docker-php-ext-configure gd \
-        --with-freetype \
-        --with-jpeg \
-        --with-webp \
-    && docker-php-ext-install -j$(nproc) \
-        pdo \
+# Install essential tools and PHP extensions (mlocati is much lighter and prevents OOM errors)
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions \
+    && apt-get update && apt-get install -y curl unzip git ca-certificates \
+    && rm -rf /var/lib/apt/lists/* \
+    && install-php-extensions \
         pdo_pgsql \
         pgsql \
-        mbstring \
-        xml \
-        curl \
         zip \
         gd \
         bcmath \
         intl \
-        fileinfo \
-        tokenizer \
-        opcache
+        opcache \
+        exif \
+        pcntl
 
 # Install Node.js 20
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
@@ -74,42 +51,21 @@ RUN npm run build
 # ---- Stage 2: Production runtime ----
 FROM php:8.3-cli
 
-# Install system dependencies (runtime only)
-RUN apt-get update && apt-get install -y \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libwebp-dev \
-    libzip-dev \
-    libicu-dev \
-    libonig-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    libpq-dev \
-    libxml2-dev \
-    curl \
-    unzip \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install PHP extensions
-RUN docker-php-ext-configure gd \
-        --with-freetype \
-        --with-jpeg \
-        --with-webp \
-    && docker-php-ext-install -j$(nproc) \
-        pdo \
+# Install necessary runtime tools and PHP extensions
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions \
+    && apt-get update && apt-get install -y curl unzip ca-certificates \
+    && rm -rf /var/lib/apt/lists/* \
+    && install-php-extensions \
         pdo_pgsql \
         pgsql \
-        mbstring \
-        xml \
-        curl \
         zip \
         gd \
         bcmath \
         intl \
-        fileinfo \
-        tokenizer \
-        opcache
+        opcache \
+        exif \
+        pcntl
 
 WORKDIR /var/www/html
 
