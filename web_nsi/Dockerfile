@@ -1,6 +1,6 @@
 # ---- Stage 1: Combined PHP + Node build stage ----
 # Wayfinder Vite plugin needs PHP during `npm run build` to introspect routes
-FROM php:8.3-cli AS builder
+FROM php:8.4-cli AS builder
 
 # Install essential tools and PHP extensions (mlocati is much lighter and prevents OOM errors)
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
@@ -49,7 +49,7 @@ RUN npm install
 RUN npm run build
 
 # ---- Stage 2: Production runtime ----
-FROM php:8.3-cli
+FROM php:8.4-cli
 
 # Install necessary runtime tools and PHP extensions
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
