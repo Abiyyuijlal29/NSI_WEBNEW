@@ -1,0 +1,22 @@
+{
+  "build": {
+    "aptPackages": [
+      "bison",
+      "re2c",
+      "libxml2-dev",
+      "libssl-dev",
+      "libcurl4-openssl-dev",
+      "pkg-config",
+      "libpng-dev",
+      "libjpeg-dev",
+      "libfreetype6-dev",
+      "libzip-dev",
+      "libicu-dev",
+      "libonig-dev",
+      "autoconf",
+      "make",
+      "gcc",
+      "g++"
+    ]
+  }
+}
