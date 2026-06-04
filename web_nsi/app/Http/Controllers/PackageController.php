@@ -32,11 +32,18 @@ class PackageController extends Controller
                 ->withHeaders($this->supabaseHeaders())
                 ->get($this->baseUrl() . '?select=*&order=created_at.desc');
 
-            $packages = $response->successful() ? $response->json() : [];
-            $connectionError = null;
+            if ($response->successful()) {
+                $packages = $response->json();
+                $connectionError = null;
+            } else {
+                $packages = [];
+                $connectionError = 'Gagal mengambil data dari Supabase (Status: ' . $response->status() . '). Mungkin masalah konfigurasi API Key / URL di Environment Variables.';
+                \Illuminate\Support\Facades\Log::error('Supabase API Error', ['body' => $response->body(), 'status' => $response->status()]);
+            }
         } catch (\Illuminate\Http\Client\ConnectionException $e) {
             $packages = [];
             $connectionError = 'Tidak dapat terhubung ke server Supabase. Periksa koneksi internet Anda.';
+            \Illuminate\Support\Facades\Log::error('Supabase Connection Error', ['message' => $e->getMessage()]);
         }
 
         return Inertia::render('content-manager', [
