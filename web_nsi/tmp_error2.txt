@@ -1,0 +1,22 @@
+﻿
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[08006] [7] could not translate host name "db.tjbgohixjcduwmiilrmn.supabase.co" to address: Name or service not known (Connection: pgsql, Host: db.tjbgohixjcduwmiilrmn.supabase.co, Port: 5432, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:841
+    837Γûò             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+    838Γûò                 ? UniqueConstraintViolationException::class
+    839Γûò                 : QueryException::class;
+    840Γûò 
+  Γ₧£ 841Γûò             $exception = new $exceptionType(
+    842Γûò                 $this->getNameWithReadWriteType(),
+    843Γûò                 $query,
+    844Γûò                 $this->prepareBindings($bindings),
+    845Γûò                 $e,
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:67
+      PDOException::("SQLSTATE[08006] [7] could not translate host name "db.tjbgohixjcduwmiilrmn.supabase.co" to address: Name or service not known")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:67
+      PDO::connect()
+

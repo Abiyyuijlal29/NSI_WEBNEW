@@ -1,0 +1,500 @@
+﻿<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 0; padding: 0; width: 100%;">
+<tr>
+<td class="header" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; padding: 25px 0; text-align: center;">
+<a href="http://localhost:8000" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; font-size: 19px; font-weight: bold; text-decoration: none; display: inline-block;">
+NSI
+</a>
+</td>
+</tr>
+
+<!-- Email Body -->
+<tr>
+<td class="body" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; background-color: #fafafa; border-bottom: 1px solid #fafafa; border-top: 1px solid #fafafa; margin: 0; padding: 0; width: 100%; border: hidden !important;">
+<table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; background-color: #ffffff; border-color: #e4e4e7; border-radius: 4px; border-width: 1px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); margin: 0 auto; padding: 0; width: 570px;">
+<!-- Body content -->
+<tr>
+<td class="content-cell" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; font-size: 18px; font-weight: bold; margin-top: 0; text-align: start;">Hello!</h1>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">You are receiving this email because we received a password reset request for your account.</p>
+<table class="action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 30px auto; padding: 0; text-align: center; width: 100%; float: unset;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<a href="http://127.0.0.1:8000/reset-password/f4bafa0a3fa6101aa8ea385b2ccb1a90059da115ef1f77db41c16f8d50dd34f3?email=abiyyuijlalnovamatin29%40gmail.com" class="button button-primary" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: #18181b; border-bottom: 8px solid #18181b; border-left: 18px solid #18181b; border-right: 18px solid #18181b; border-top: 8px solid #18181b; word-break: break-all;">Reset Password</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">This password reset link will expire in 60 minutes.</p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">If you did not request a password reset, no further action is required.</p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Regards,<br>
+NSI</p>
+
+
+<table class="subcopy" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; border-top: 1px solid #e4e4e7; margin-top: 25px; padding-top: 25px;">
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; text-align: left; font-size: 14px;">If you're having trouble clicking the "Reset Password" button, copy and paste the URL below
+into your web browser: <span class="break-all" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; word-break: break-all;"><a href="http://127.0.0.1:8000/reset-password/f4bafa0a3fa6101aa8ea385b2ccb1a90059da115ef1f77db41c16f8d50dd34f3?email=abiyyuijlalnovamatin29%40gmail.com" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; word-break: break-all;">http://127.0.0.1:8000/reset-password/f4bafa0a3fa6101aa8ea385b2ccb1a90059da115ef1f77db41c16f8d50dd34f3?email=abiyyuijlalnovamatin29%40gmail.com</a></span></p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; margin: 0 auto; padding: 0; text-align: center; width: 570px;">
+<tr>
+<td class="content-cell" align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; color: #a1a1aa; font-size: 12px; text-align: center;">Â© 2026 NSI. All rights reserved.</p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+--keRVNXZj--
+  
+[2026-06-04 00:02:36] local.ERROR: SQLSTATE[08006] [7] could not translate host name "db.tjbgohixjcduwmiilrmn.supabase.co" to address: Name or service not known (Connection: pgsql, Host: db.tjbgohixjcduwmiilrmn.supabase.co, Port: 5432, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 7): SQLSTATE[08006] [7] could not translate host name \"db.tjbgohixjcduwmiilrmn.supabase.co\" to address: Name or service not known (Connection: pgsql, Host: db.tjbgohixjcduwmiilrmn.supabase.co, Port: 5432, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php:841)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1021): Illuminate/Database/Connection->runQueryCallback()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1000): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(799): Illuminate/Database/Connection->handleQueryException()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#4 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#5 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#24 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#25 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#26 {main}
+
+[previous exception] [object] (PDOException(code: 7): SQLSTATE[08006] [7] could not translate host name \"db.tjbgohixjcduwmiilrmn.supabase.co\" to address: Name or service not known at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(85): Illuminate/Database/Connectors/Connector->createPdoConnection()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(48): Illuminate/Database/Connectors/Connector->tryAgainIfCausedByLostConnection()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/PostgresConnector.php(35): Illuminate/Database/Connectors/Connector->createConnection()
+#4 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(188): Illuminate/Database/Connectors/PostgresConnector->connect()
+#5 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->{closure:Illuminate/Database/Connectors/ConnectionFactory::createPdoResolverWithHosts():181}()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1279): call_user_func()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1317): Illuminate/Database/Connection->getPdo()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getReadPdo()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(421): Illuminate/Database/Connection->getPdoForSelect()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(830): Illuminate/Database/Connection->{closure:Illuminate/Database/Connection::select():412}()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1021): Illuminate/Database/Connection->runQueryCallback()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1000): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(799): Illuminate/Database/Connection->handleQueryException()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#24 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#25 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#26 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#27 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#28 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#29 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#30 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#31 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#32 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#33 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#34 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#35 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#36 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#37 {main}
+"} 
+[2026-06-04 00:05:21] local.ERROR: SQLSTATE[08006] [7] connection to server at "aws-0-ap-southeast-1.pooler.supabase.com" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found
+connection to server at "aws-0-ap-southeast-1.pooler.supabase.com" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found (Connection: pgsql, Host: aws-0-ap-southeast-1.pooler.supabase.com, Port: 6543, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 7): SQLSTATE[08006] [7] connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found
+connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found (Connection: pgsql, Host: aws-0-ap-southeast-1.pooler.supabase.com, Port: 6543, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php:841)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate/Database/Connection->runQueryCallback()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#4 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#5 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#24 {main}
+
+[previous exception] [object] (PDOException(code: 7): SQLSTATE[08006] [7] connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found
+connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate/Database/Connectors/Connector->createPdoConnection()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/PostgresConnector.php(35): Illuminate/Database/Connectors/Connector->createConnection()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(188): Illuminate/Database/Connectors/PostgresConnector->connect()
+#4 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->{closure:Illuminate/Database/Connectors/ConnectionFactory::createPdoResolverWithHosts():181}()
+#5 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1279): call_user_func()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1317): Illuminate/Database/Connection->getPdo()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getReadPdo()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(421): Illuminate/Database/Connection->getPdoForSelect()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(830): Illuminate/Database/Connection->{closure:Illuminate/Database/Connection::select():412}()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate/Database/Connection->runQueryCallback()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#24 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#25 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#26 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#27 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#28 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#29 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#30 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#31 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#32 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#33 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#34 {main}
+"} 
+[2026-06-04 00:05:35] local.ERROR: SQLSTATE[08006] [7] connection to server at "aws-0-ap-southeast-1.pooler.supabase.com" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found
+connection to server at "aws-0-ap-southeast-1.pooler.supabase.com" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found (Connection: pgsql, Host: aws-0-ap-southeast-1.pooler.supabase.com, Port: 6543, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 7): SQLSTATE[08006] [7] connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found
+connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found (Connection: pgsql, Host: aws-0-ap-southeast-1.pooler.supabase.com, Port: 6543, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php:841)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate/Database/Connection->runQueryCallback()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#4 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#5 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#24 {main}
+
+[previous exception] [object] (PDOException(code: 7): SQLSTATE[08006] [7] connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found
+connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate/Database/Connectors/Connector->createPdoConnection()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/PostgresConnector.php(35): Illuminate/Database/Connectors/Connector->createConnection()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(188): Illuminate/Database/Connectors/PostgresConnector->connect()
+#4 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->{closure:Illuminate/Database/Connectors/ConnectionFactory::createPdoResolverWithHosts():181}()
+#5 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1279): call_user_func()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1317): Illuminate/Database/Connection->getPdo()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getReadPdo()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(421): Illuminate/Database/Connection->getPdoForSelect()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(830): Illuminate/Database/Connection->{closure:Illuminate/Database/Connection::select():412}()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate/Database/Connection->runQueryCallback()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#24 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#25 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#26 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#27 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#28 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#29 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#30 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#31 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#32 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#33 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#34 {main}
+"} 
+[2026-06-04 00:05:53] local.ERROR: SQLSTATE[08006] [7] connection to server at "aws-0-ap-southeast-1.pooler.supabase.com" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found
+connection to server at "aws-0-ap-southeast-1.pooler.supabase.com" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found (Connection: pgsql, Host: aws-0-ap-southeast-1.pooler.supabase.com, Port: 6543, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 7): SQLSTATE[08006] [7] connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found
+connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found (Connection: pgsql, Host: aws-0-ap-southeast-1.pooler.supabase.com, Port: 6543, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php:841)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate/Database/Connection->runQueryCallback()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#4 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#5 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#24 {main}
+
+[previous exception] [object] (PDOException(code: 7): SQLSTATE[08006] [7] connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found
+connection to server at \"aws-0-ap-southeast-1.pooler.supabase.com\" (54.255.219.82), port 6543 failed: FATAL:  (ENOTFOUND) tenant/user postgres.tjbgohixjcduwmiilrmn not found at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate/Database/Connectors/Connector->createPdoConnection()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/PostgresConnector.php(35): Illuminate/Database/Connectors/Connector->createConnection()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(188): Illuminate/Database/Connectors/PostgresConnector->connect()
+#4 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->{closure:Illuminate/Database/Connectors/ConnectionFactory::createPdoResolverWithHosts():181}()
+#5 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1279): call_user_func()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1317): Illuminate/Database/Connection->getPdo()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getReadPdo()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(421): Illuminate/Database/Connection->getPdoForSelect()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(830): Illuminate/Database/Connection->{closure:Illuminate/Database/Connection::select():412}()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate/Database/Connection->runQueryCallback()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#24 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#25 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#26 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#27 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#28 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#29 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#30 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#31 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#32 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#33 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#34 {main}
+"} 
+[2026-06-04 00:27:19] local.ERROR: SQLSTATE[08006] [7] could not translate host name "db.tjbgohixjcduwmiilrmn.supabase.co" to address: Name or service not known (Connection: pgsql, Host: db.tjbgohixjcduwmiilrmn.supabase.co, Port: 5432, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 7): SQLSTATE[08006] [7] could not translate host name \"db.tjbgohixjcduwmiilrmn.supabase.co\" to address: Name or service not known (Connection: pgsql, Host: db.tjbgohixjcduwmiilrmn.supabase.co, Port: 5432, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php:841)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1021): Illuminate/Database/Connection->runQueryCallback()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1000): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(799): Illuminate/Database/Connection->handleQueryException()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#4 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#5 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#24 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#25 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#26 {main}
+
+[previous exception] [object] (PDOException(code: 7): SQLSTATE[08006] [7] could not translate host name \"db.tjbgohixjcduwmiilrmn.supabase.co\" to address: Name or service not known at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(85): Illuminate/Database/Connectors/Connector->createPdoConnection()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(48): Illuminate/Database/Connectors/Connector->tryAgainIfCausedByLostConnection()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/PostgresConnector.php(35): Illuminate/Database/Connectors/Connector->createConnection()
+#4 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(188): Illuminate/Database/Connectors/PostgresConnector->connect()
+#5 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->{closure:Illuminate/Database/Connectors/ConnectionFactory::createPdoResolverWithHosts():181}()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1279): call_user_func()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1317): Illuminate/Database/Connection->getPdo()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getReadPdo()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(421): Illuminate/Database/Connection->getPdoForSelect()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(830): Illuminate/Database/Connection->{closure:Illuminate/Database/Connection::select():412}()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1021): Illuminate/Database/Connection->runQueryCallback()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1000): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(799): Illuminate/Database/Connection->handleQueryException()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#24 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#25 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#26 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#27 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#28 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#29 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#30 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#31 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#32 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#33 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#34 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#35 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#36 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#37 {main}
+"} 
+[2026-06-04 00:31:38] local.ERROR: SQLSTATE[08006] [7] could not translate host name "db.tjbgohixjcduwmiilrmn.supabase.co" to address: Name or service not known (Connection: pgsql, Host: db.tjbgohixjcduwmiilrmn.supabase.co, Port: 5432, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 7): SQLSTATE[08006] [7] could not translate host name \"db.tjbgohixjcduwmiilrmn.supabase.co\" to address: Name or service not known (Connection: pgsql, Host: db.tjbgohixjcduwmiilrmn.supabase.co, Port: 5432, Database: postgres, SQL: select exists (select 1 from pg_class c, pg_namespace n where n.nspname = current_schema() and c.relname = 'migrations' and c.relkind in ('r', 'p') and n.oid = c.relnamespace)) at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php:841)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1021): Illuminate/Database/Connection->runQueryCallback()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1000): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(799): Illuminate/Database/Connection->handleQueryException()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#4 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#5 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#24 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#25 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#26 {main}
+
+[previous exception] [object] (PDOException(code: 7): SQLSTATE[08006] [7] could not translate host name \"db.tjbgohixjcduwmiilrmn.supabase.co\" to address: Name or service not known at D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+[stacktrace]
+#0 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+#1 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(85): Illuminate/Database/Connectors/Connector->createPdoConnection()
+#2 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(48): Illuminate/Database/Connectors/Connector->tryAgainIfCausedByLostConnection()
+#3 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/PostgresConnector.php(35): Illuminate/Database/Connectors/Connector->createConnection()
+#4 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(188): Illuminate/Database/Connectors/PostgresConnector->connect()
+#5 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->{closure:Illuminate/Database/Connectors/ConnectionFactory::createPdoResolverWithHosts():181}()
+#6 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1279): call_user_func()
+#7 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1317): Illuminate/Database/Connection->getPdo()
+#8 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getReadPdo()
+#9 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(421): Illuminate/Database/Connection->getPdoForSelect()
+#10 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(830): Illuminate/Database/Connection->{closure:Illuminate/Database/Connection::select():412}()
+#11 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1021): Illuminate/Database/Connection->runQueryCallback()
+#12 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1000): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection()
+#13 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(799): Illuminate/Database/Connection->handleQueryException()
+#14 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): Illuminate/Database/Connection->run()
+#15 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(357): Illuminate/Database/Connection->select()
+#16 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Connection.php(374): Illuminate/Database/Connection->selectOne()
+#17 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate/Database/Connection->scalar()
+#18 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate/Database/Schema/Builder->hasTable()
+#19 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(758): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#20 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(55): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#21 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate/Database/Console/Migrations/StatusCommand->{closure:Illuminate/Database/Console/Migrations/StatusCommand::handle():54}()
+#22 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(54): Illuminate/Database/Migrations/Migrator->usingConnection()
+#23 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#24 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#25 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#26 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#27 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#28 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate/Container/Container->call()
+#29 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Command/Command.php(291): Illuminate/Console/Command->execute()
+#30 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony/Component/Console/Command/Command->run()
+#31 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(1107): Illuminate/Console/Command->run()
+#32 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#33 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#34 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#35 D:/Project from github/NSI_WEBNEW/web_nsi/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#36 D:/Project from github/NSI_WEBNEW/web_nsi/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#37 {main}
+"} 
